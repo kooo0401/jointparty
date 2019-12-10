@@ -16,12 +16,11 @@ RUN apk update \
     && apk add postgresql-dev \
     && pip install psycopg2 \
     && apk del build-deps \
-    && pip install django-bootstrap4 \
-    && pip install django-fontawesome
+    && pip install django-bootstrap4
 
 # Pipenvをインストール
 RUN pip install --upgrade pip \
-&& pip install pipenv
+    && pip install pipenv
 
 # ホストのpipfileをコンテナの作業ディレクトリにコピー
 COPY ./Pipfile /usr/src/app/Pipfile
