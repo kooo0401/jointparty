@@ -11,7 +11,7 @@ services:
         command: gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
         # データを永続化させる場合の設定。`host:container`でパスを記載
         volumes:
-            - ./app/:/usr/src/app/
+            - static_volume:/usr/src/app/staticfiles
         # 開放するポートを指定。`host:container`でポートを記載
         expose:
             - 8000
