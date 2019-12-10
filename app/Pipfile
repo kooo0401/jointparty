@@ -8,8 +8,8 @@ verify_ssl = true
 [packages]
 django = "==3.0"
 django-environ = "*"
-gunicorn= "==19.9.0"
-# psycopg2-binary == 2.8.3
+gunicorn= "*"
+fontawesome = "*"
 
 [requires]
-python_version = "3.8"
+python_piiversion = "3.8"
