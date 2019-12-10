@@ -1,14 +1,21 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 
-{% bootstrap_messages %}
-
-<form action="/url/to/submit/" method="post" class="form">
-    {% csrf_token %}
-    {% buttons %}
-    <button type="submit" class="btn btn-primary">
-        Submit
-    </button>
-    {% endbuttons %}
-    {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}
-</form>
+<div class="loginPage">
+    <div class="container">
+        <form method="GET" action="/login/">
+            <div class="loginPage_contents">
+                <h1 class="h3 loginPage_contents_title">新しいマッチを見つけよう</h1>
+                {% csrf_token %}
+                {% buttons %}
+                <button type="submit" class="btn loginPage_contents_btn">
+                    メールアドレスでログインする
+                </button>
+                {% endbuttons %}
+            </div>
+        </form>
+    </div>
+</div>
