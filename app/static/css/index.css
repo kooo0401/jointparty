@@ -15,6 +15,7 @@
 
 .loginPage_contents_title {
   margin-top: 12vh;
+  /* オシャレ文字を使用 */
   font-family: 'Amatic SC', cursive;
   font-size: 100px;
   cursor: default;
@@ -28,6 +29,7 @@
   border-radius: 30px;
   background: #4866c9;
   color: #fff;
+  /* オシャレ文字を使用 */
   font-family: 'Amatic SC', cursive;
   cursor: pointer;
 }
