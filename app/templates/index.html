@@ -1,5 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<!-- /オシャレ文字を使用 -->
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
 
 <!-- {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %} -->
@@ -10,13 +12,13 @@
     <div class="container">
         <form method="GET" action="/login/">
             <div class="loginPage_contents">
-                <h1 class="h3 loginPage_contents_title">JointParty</h1>
-                {% csrf_token %}
-                {% buttons %}
-                <button type="submit" class="btn loginPage_contents_btn">
+                <h1 class="loginPage_contents_title">J o i n t P a r t y</h1>
+                <!-- {% csrf_token %} -->
+                <!-- {% buttons %} -->
+                <button type="submit" class="loginPage_contents_btn">
                     ログイン
                 </button>
-                {% endbuttons %}
+                <!-- {% endbuttons %} -->
             </div>
         </form>
     </div>

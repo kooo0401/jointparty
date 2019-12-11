@@ -15,8 +15,7 @@ RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
     && apk add postgresql-dev \
     && pip install psycopg2 \
-    && apk del build-deps \
-    && pip install django-bootstrap4
+    && apk del build-deps
 
 # Pipenvをインストール
 RUN pip install --upgrade pip \
@@ -24,6 +23,7 @@ RUN pip install --upgrade pip \
 
 # ホストのpipfileをコンテナの作業ディレクトリにコピー
 COPY ./Pipfile /usr/src/app/Pipfile
+COPY ./Pipfile.lock /usr/src/app/Pipfile.lock
 
 # pipfileからパッケージをインストールしてDjango環境を構築
 RUN pipenv install --skip-lock --system --dev
