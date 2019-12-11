@@ -1,6 +1,8 @@
 .loginPage {
   width: 100%;
   height: 100%;
+  background-image: url("/staticfiles/images/top.jpg");
+  background-size: cover;
 }
 
 .loginPage_contents {
@@ -13,6 +15,9 @@
 
 .loginPage_contents_title {
   margin-top: 12vh;
+  font-family: 'Amatic SC', cursive;
+  font-size: 100px;
+  cursor: default;
 }
 
 .loginPage_contents_btn {
@@ -23,4 +28,6 @@
   border-radius: 30px;
   background: #4866c9;
   color: #fff;
+  font-family: 'Amatic SC', cursive;
+  cursor: pointer;
 }
