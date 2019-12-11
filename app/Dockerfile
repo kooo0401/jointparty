@@ -26,7 +26,7 @@ COPY ./Pipfile /usr/src/app/Pipfile
 COPY ./Pipfile.lock /usr/src/app/Pipfile.lock
 
 # pipfileからパッケージをインストールしてDjango環境を構築
-RUN pipenv install --skip-lock --system --dev
+RUN pipenv install --system --dev
 
 # entrypoint.shをコピー
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
