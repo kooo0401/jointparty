@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "caea37ba06913690b9b9ffbfd753f5a36643432a1611d02c025900611cf83e98"
+            "sha256": "4abaed7d53ffdbe085b6861c16d2e70936fd3549a66d587a7e9b03fd31ff89cc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,6 +70,13 @@
             ],
             "index": "pypi",
             "version": "==20.0.4"
+        },
+        "imagekit": {
+            "hashes": [
+                "sha256:6727e38f11a322d1a4b067217054c2c0dc3d7ea9a866269d1c0262f77aef8eb4"
+            ],
+            "index": "pypi",
+            "version": "==1.0.6"
         },
         "pytz": {
             "hashes": [

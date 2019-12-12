@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'match',
     'bootstrap4',
     'fontawesome',
+    'imagekit',
 ]
 
 MIDDLEWARE = [

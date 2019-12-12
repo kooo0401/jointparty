@@ -11,6 +11,7 @@ django-environ = "*"
 gunicorn= "*"
 fontawesome = "*"
 django-bootstrap4 = "*"
+imagekit = "*"
 
 [requires]
 python_piiversion = "3.8"
