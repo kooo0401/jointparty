@@ -23,7 +23,7 @@ services:
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0-alpine
+        image: postgres:12.0
         # データベースの永続化
         volumes:
             - postgres_data:/var/lib/postgresql/data/
