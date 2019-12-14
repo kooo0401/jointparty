@@ -4,26 +4,26 @@ services:
     # サービス名は自由に設定
     django:  
         # appディレクトリの中から`Dockerfile`を探す
-        build: ./app
+        build: ./
         # サービス起動後に入力されるコマンドを設定
-        command: python manage.py runserver 0.0.0.0:8000
+        command: python app/manage.py runserver 0.0.0.0:8000
         # データを永続化させる場合の設定。`host:container`でパスを記載
         volumes:
-            - ./app/:/usr/src/app/
+            - .:/app
         # 開放するポートを指定。`host:container`でポートを記載  
         ports:
             - 8000:8000
         # 環境変数を指定
         # environment:
         env_file:
-            - ./app/.env
+            - ./.env
         # 接続するサービスを指定
         depends_on:
             - postgres
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0-alpine
+        image: postgres:12.0
         # データベースの永続化
         # ホストのディレクトリにマウントしない様、先頭に`./`をつけない
         volumes:

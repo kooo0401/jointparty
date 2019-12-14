@@ -8,10 +8,11 @@ verify_ssl = true
 [packages]
 django = "==3.0"
 django-environ = "*"
-gunicorn= "*"
-fontawesome = "*"
 django-bootstrap4 = "*"
-imagekit = "*"
+gunicorn = "*"
+fontawesome = "*"
+django-imagekit = "*"
+pillow = "*"
 
 [requires]
 python_piiversion = "3.8"
