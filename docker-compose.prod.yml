@@ -5,7 +5,7 @@ services:
     django:
         build:
             # 読み込むファイル名が`Dockerfile`ではない場合contextに相対パス、dockerfileにファイル名を記載
-            context: ./
+            context: .
             dockerfile: Dockerfile.prod
         # サービス起動後に入力されるコマンドを設定
         command: gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
