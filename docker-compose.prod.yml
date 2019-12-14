@@ -5,7 +5,7 @@ services:
     django:
         build:
             # 読み込むファイル名が`Dockerfile`ではない場合contextに相対パス、dockerfileにファイル名を記載
-            context: ./app
+            context: ./
             dockerfile: Dockerfile.prod
         # サービス起動後に入力されるコマンドを設定
         command: gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
@@ -23,7 +23,7 @@ services:
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0-alpine
+        image: postgres:12.0
         # データベースの永続化
         volumes:
             - postgres_data:/var/lib/postgresql/data/

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'match',
     'bootstrap4',
     'fontawesome',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # templateディレクトリにまとめる
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'temlates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
