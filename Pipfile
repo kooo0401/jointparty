@@ -10,9 +10,9 @@ django = "==3.0"
 django-environ = "*"
 django-bootstrap4 = "*"
 gunicorn = "*"
+pillow = "*"
 fontawesome = "*"
 django-imagekit = "*"
-pillow = "*"
 
 [requires]
 python_piiversion = "3.8"
