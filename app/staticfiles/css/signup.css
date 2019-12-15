@@ -19,7 +19,7 @@ body {
 .sinupPage .header {
   padding: 20px;
   text-align: center;
-  background: #fd5068;
+  background: #4866c9;
   color: #fff;
 }
 
@@ -28,7 +28,7 @@ body {
   margin: 0 auto 10px auto;
   width: 100px;
   height: 100px;
-  background: #f85a6f;
+  background: #4866c9;
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -89,7 +89,7 @@ font-size: 12px;
 }
 
 .sinupPage .submitBtn {
-  background: #fd5068;
+  background: #4866c9;
   color: #fff;
   width: 200px;
   padding: 10px;

@@ -2,16 +2,31 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/boot.css' %}"> -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <script src="{% static 'js/users.js' %}"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- <div class="container">
+	<div class="login-container">
+        <div id="output"></div>
+        <div class="avatar"></div>
+        <div class="form-box">
+            <form action="" method="">
+                <input name="user" type="text" placeholder="username">
+                <input type="password" placeholder="password">
+                <button class="btn btn-info btn-block login" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div> -->
 
 <div class="sinupPage">
     <header class="header">
         <div>アカウントを作成</div>
     </header>
     <div class='container'>
-        <form class="mt-5" id="new_user" enctype="multipart/form-data" accept-charset="UTF-8" method="POST" action="{% url 'match:s' %}">
+        <form class="mt-5" id="new_user" enctype="multipart/form-data" accept-charset="UTF-8" method="POST" action="{% url 'match:signup' %}">
             {% csrf_token %}
             <input name="utf8" type="hidden" value="✓">
             <input type="hidden" name="authenticity_token" value="s8O7UsW45y0Qa6t3y1hARPTt0Y2XupNHiCcK9e7PphbZBj5R9r8nPP9eLLEGvN4jLb8XMnedE8oH3hwIkbAKYw==">
