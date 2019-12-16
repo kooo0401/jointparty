@@ -15,11 +15,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # psycopg2のインストール
-# RUN apk update \
-#     && apk add --virtual build-deps gcc python3-dev musl-dev \
-#     && apk add postgresql-dev \
 RUN pip install psycopg2-binary
-    # && apk del build-deps
 
 # Pipenvをインストール
 RUN pip install --upgrade pip \
@@ -33,22 +29,10 @@ COPY Pipfile.lock ./
 RUN pipenv install --system --ignore-pipfile
 
 # entrypoint.shをコピー
-COPY ./entrypoint.prod.sh /app/entrypoint.prod.sh
+COPY entrypoint.prod.sh ./
 
 # ホストのカレントディレクトリ（現在はappディレクトリ）を作業ディレクトリにコピー
 COPY . .
 
 # entrypoint.shを実行
 ENTRYPOINT ["/app/entrypoint.prod.sh"]
-
-# # Pipenvをインストール
-# RUN pip install --upgrade pip \
-# && pip install pipenv
-# COPY Pipfile Pipfile.lock ./
-# RUN pipenv install --system --ignore-pipfile
-
-# # ホストのpipfileをコンテナの作業ディレクトリにコピー
-# # COPY ./Pipfile /usr/src/app/Pipfile
-
-# # pipfileからパッケージをインストールしてDjango環境を構築
-# # RUN pipenv install --skip-lock --system --dev

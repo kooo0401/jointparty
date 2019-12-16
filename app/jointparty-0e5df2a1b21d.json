@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "jointparty",
+  "private_key_id": "0e5df2a1b21d6e4d0de6a9dd2e8ec58d94ae7246",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCirpgLw/5uqsUG\nZa3KtpmxHUGnAPJy02lYaipeFrietd3how8PtGj8iOFBYN/d2QlYlBctiBu3V6pw\nIirhojkfUuJlTxjCuGR/DwwDGG5LvuwltuLi9sXS4hKouz9sU/BZ3t9k6OO+oaqw\nmfVgvieEC/nHQ3+obNfiUDxD1dkJr6eQIKyzKB3rijTyG1hYsTA+uN8V8uA4r5Zt\nxo/92J1nH8A8o6j4r3kAhnFlUxC3sh0C1En6MO9hks1pNJQKlKQT8VVc3uxoN4Nn\nvT0CjG5kT4urXGtUSojv+27Fgfpv6VAI1wsDonjXMRSWWO7/j1U9bb7++IH42gyd\n6klEyd7PAgMBAAECggEADJ1xWOg34KkJYjecRG3oeR2Fq8edBV5zetGwu18Trer4\na7jTQCqDQaHzpbg3Y+KioOXK7lLxo0P/CXb80EZeG5m3yJdbmi3mTRwDmHHai7Eg\nasRFz8fHC1VQkRkEEAhqSO3JcO/GSVAMBmnJ51iXg9vR4KvRSGQ4UWpbYf9BN0jx\n5DRyIX6xi/N0MZNpEfzeafDbeeLgiyNhI0Q36K47eDELKpcrLU37iihDLNsrABuP\nvuTfJVhzYEFgiTtxP1qd0tgywRnVTPt3xG0HHmL587tqw3jrMlRp3JQNmQd0a+Fn\n2mRFu9MCCp758eAzzONBoNdB6BBTrA5w/v5mHFe3QQKBgQDjveBr0e/LJKbc2m6C\nfW71+roQ6yU+TIGewvj3LxDCBZ7CGxY7NjBFZ+6OimqSNvvbhXphk+g/5JOISoMj\n7R7sI4nxc0yO9bphL/6wyTzCN6L9KPndaYFMJrBA1aObx3eFgDf8eiEkXvAIlB9H\njUbjsv+6E98qOMkf7F05p/DhvwKBgQC23h9KwYsvryl1DlNWvj8VjXomYn+7nMtS\nTsCKjpjmpK1A2DD0O/Czo69+p8/RdGR0v09TySNFkRvXrVpeJFFKDOoUjvhNL424\nIr+tzWfVv2UANW4BgzyvSVksrGpWBvRfpol9jmeLmPIiB46zlPzbUir7/Gp1QAKQ\nvUSrIT0m8QKBgBfXkAAZqV3+B04FvB4DHbO4vPP6ehqsjcFeLgxKrBlz1ywBA/HM\n+X66o7neecu23+UaczZ18pGFz4AsNNB1CZC1I8LYTEKHLSzxhlthpe+7PV/9gzMP\n0Y50Wm1fMFKlrjiWtMXEz2VsXvq27xNhkfNSkP0dCXb1HPEvoI7hqxEnAoGBAKv9\nuAKwjD9aCKzuv1Vbc6vKt7M4exiyvMx6Az+OJKLxCX5ul4Ruh9H9RsbiAGToir7/\nXBXanJEGjOBKTC81CzuRb+vMGB9IdYtVK2DFSz7PV6hdmExV6ZKXcwbAVvb4bYk0\n8iWj9SFnxXxaDU4796Iz4vfDjUEf5gnJ6bbmeUSRAoGAZTtZXTe1iDO9GQVkuSyS\nij+Fm168UYSvUFeX6kledE+bjsR4Wzsn/nonGb9zbgYQVcyJnyf5vo4C23LaRUjx\nhnSaCC0+fkeGw0ubrb865sX+77DYrcur8ZXL3VzeiaAZd0BfZmDedd15xCzRYksY\nw94aqtKyACPLghcP/60uq8w=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jointparty-iam@jointparty.iam.gserviceaccount.com",
+  "client_id": "107199940105063222366",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jointparty-iam%40jointparty.iam.gserviceaccount.com"
+}
