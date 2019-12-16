@@ -19,3 +19,10 @@ def signup(request):
         'form': form,
     }
     return HttpResponse(template.render(context, request))
+
+def gets(request):
+    template = loader.get_template('users.html')
+    context = {
+        'form': '',
+    }
+    return HttpResponse(template.render(context, request))

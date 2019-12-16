@@ -29,7 +29,7 @@ COPY Pipfile.lock ./
 RUN pipenv install --system --ignore-pipfile
 
 # entrypoint.shをコピー
-# COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
+COPY entrypoint.sh ./
 
 # ホストのカレントディレクトリ（現在はappディレクトリ）を作業ディレクトリにコピー
 COPY . .
