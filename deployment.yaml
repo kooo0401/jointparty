@@ -1,9 +1,9 @@
-apiVersion: extensions/v1beta1
+apiVersion: jointparty/v1
 kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       name: django-cluster
@@ -17,6 +17,6 @@ spec:
       - name: django-cluster
         image: gcr.io/jointparty/django-cluster:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000 #8080
           protocol: TCP
   revisionHistoryLimit: 100
