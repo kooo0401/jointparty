@@ -3,7 +3,7 @@ steps:
 # $PROJECT_IDには使用中のプロジェクトIDが自動的に挿入されます
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-f', 'Dockerfile.prod', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
-# 作成したcb-sample-serverイメージをPUSHする
+# 作成したdjango-clusterイメージをPUSHする
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/django-cluster:$_VERSION"]
 # Clusterを取得。$_ZONEはトリガーの変数として設定します。
@@ -13,7 +13,7 @@ steps:
   - container
   - clusters
   - get-credentials
-  - cb-sample-server
+  - django-cluster
   - --zone=$_ZONE
   - --project=$PROJECT_ID
 # アプリのデプロイ設定
