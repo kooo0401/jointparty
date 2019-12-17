@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     # サービス名は自由に設定
-    django:  
+    django:
         # appディレクトリの中から`Dockerfile`を探す
         build: .
         # サービス起動後に入力されるコマンドを設定
