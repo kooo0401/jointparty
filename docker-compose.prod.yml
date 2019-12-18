@@ -26,7 +26,7 @@ services:
         image: postgres:12.0
         # データベースの永続化
         volumes:
-            - postgres_data:/var/lib/postgresql/data/
+            - ./postgres_data:/var/lib/postgresql/data
         env_file: .env.prod.db
         # ports:
         #     - "5432:5432"
