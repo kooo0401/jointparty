@@ -86,8 +86,8 @@ WSGI_APPLICATION = 'jointparty.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DATABASE_ENGINE','django.db.backends.sqlite3'),
-        'NAME': os.environ.get('DATABASE_DB', os.path.join(BASE_DIR, 'db.sqlite3')),
+        'ENGINE': os.environ.get('DATABASE_ENGINE','django.db.backends.postgresql'),
+        'NAME': os.environ.get('DATABASE_DB', os.path.join(BASE_DIR, 'db.postgresql')),
         'USER': os.environ.get('DATABASE_USER', 'user'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'password'),
         'HOST': os.environ.get('DATABASE_HOST', 'localhost'),

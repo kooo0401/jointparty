@@ -2,6 +2,7 @@ from django.db import models
 from imagekit.models import ImageSpecField, ProcessedImageField
 from imagekit.processors import ResizeToFill
 
+
 class Image(models.Model):
     id = models.IntegerField(primary_key=True)
     objects = models.Manager
