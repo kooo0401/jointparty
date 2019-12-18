@@ -2,9 +2,12 @@ version: '3.7'
 
 services:
     # サービス名は自由に設定
-    django:  
+    django:
         # appディレクトリの中から`Dockerfile`を探す
         build: .
+        # ↓起動順番を調整（本来はentrypoint.shで処理すべき）20191218
+        depends_on:
+            - postgres
         # サービス起動後に入力されるコマンドを設定
         command: python app/manage.py runserver 0.0.0.0:8000
         # データを永続化させる場合の設定。`host:container`でパスを記載
@@ -23,11 +26,11 @@ services:
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0
+        image: postgres:12.0-alpine
         # データベースの永続化
         # ホストのディレクトリにマウントしない様、先頭に`./`をつけない
         volumes:
-            - postgres_data:/var/lib/postgresql/data/
+            - ./postgres_data:/var/lib/postgresql/data
         # su権限を持つ、指定されたユーザーと同じ名前のデータベースを作成
         # valueはdjangoサービスで指定したものと同じ様に記載
         environment:
