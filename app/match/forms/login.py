@@ -4,8 +4,16 @@ from django.contrib.auth.forms import AuthenticationForm
 class LoginForm(AuthenticationForm):
     """ログインフォーム"""
 
+    username = forms.CharField(label='LOGIN_ID', max_length=30,
+    widget=forms.TextInput(
+    attrs={'placeholder':'名前を入力してください'}))
+
+    password = forms.CharField(
+    label='PASSWORD', max_length=128,
+    widget=forms.PasswordInput(
+    attrs={'placeholder':'パスワードを入力してください'}))
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
-            field.widget.attrs['placeholder'] = 'field.label'

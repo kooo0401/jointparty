@@ -147,7 +147,7 @@ MEDIA_URL = '/media/'
 
 # デバッグツール（django-debug-toolbar）の設定
 if DEBUG:
-    INTERNAL_IPS = ('127.0.0.1',)
+    INTERNAL_IPS = ('127.0.0.1', '192.168.48.1')
     MIDDLEWARE += (
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
