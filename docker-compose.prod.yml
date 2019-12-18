@@ -7,8 +7,14 @@ services:
             # 読み込むファイル名が`Dockerfile`ではない場合contextに相対パス、dockerfileにファイル名を記載
             context: .
             dockerfile: Dockerfile.prod
+        # ↓起動順番を調整（本来はentrypoint.shで処理すべき）20191218
+        depends_on:
+            - postgres
+            - nginx
         # サービス起動後に入力されるコマンドを設定
         command: gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
+        # command: python app/manage.py runserver 0.0.0.0:8000
+
         # データを永続化させる場合の設定。`host:container`でパスを記載
         volumes:
             - static_volume:/usr/src/app/staticfiles
@@ -23,7 +29,7 @@ services:
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0
+        image: postgres:12.0-alpine
         # データベースの永続化
         volumes:
             - ./postgres_data:/var/lib/postgresql/data
