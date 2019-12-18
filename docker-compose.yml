@@ -23,7 +23,7 @@ services:
 
     postgres:
         # 公式からイメージをpull
-        image: postgres:12.0
+        image: postgres:12.0-alpine
         # データベースの永続化
         # ホストのディレクトリにマウントしない様、先頭に`./`をつけない
         volumes:
