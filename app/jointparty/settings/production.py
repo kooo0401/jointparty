@@ -12,7 +12,7 @@ if READ_ENV_FILE:
     env_file = str(BASE_DIR.path('.env.prod'))
     env.read_env(env_file)
  
-DEBUG = int(os.environ.get("DEBUG"))
+DEBUG = 0
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
