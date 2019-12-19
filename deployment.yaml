@@ -19,7 +19,7 @@ spec:
         ports:
         envFrom:
           - secretRef:
-            name: my-env-file-secret
+            name: joint-env
         - containerPort: 8000 #8080
           protocol: TCP
       # - restartPolicy: OnFailure
