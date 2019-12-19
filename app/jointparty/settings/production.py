@@ -12,9 +12,9 @@ if READ_ENV_FILE:
     env_file = str(BASE_DIR.path('.env.prod'))
     env.read_env(env_file)
  
-DEBUG = 0
+DEBUG = int(os.environ.get("DEBUG"))
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 # 一旦コメントアウト、後ほど20191219
 # DATABASES = {

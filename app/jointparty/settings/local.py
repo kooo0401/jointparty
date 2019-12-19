@@ -3,6 +3,8 @@ import os
 import environ
 
 BASE_DIR = environ.Path(__file__) - 3
+SECRET_KEY = os.environ.get("SECRET_KEY")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 env = environ.Env()
 

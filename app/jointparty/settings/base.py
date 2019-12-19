@@ -14,8 +14,6 @@ import os
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3
- 
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
