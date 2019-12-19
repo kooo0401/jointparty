@@ -14,7 +14,6 @@ if READ_ENV_FILE:
 
 SECRET_KEY = "=llv2rzj$^vk)wx7n_u9v$o(ic2i-7w)m&0il3vlamiei2#&d6"
 ALLOWED_HOSTS = []
-
 DEBUG = False
 
 # 一旦コメントアウト、後ほど20191219
