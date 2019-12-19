@@ -21,6 +21,6 @@ spec:
           protocol: TCP
         envFrom:
         - secretRef:
-          name: my-env-file-secret
+          name: from-env-file
       # - restartPolicy: OnFailure
   revisionHistoryLimit: 100
