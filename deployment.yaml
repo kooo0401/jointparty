@@ -16,10 +16,10 @@ spec:
       containers:
       - name: django-cluster
         image: gcr.io/jointparty/django-cluster:latest
-        ports:
         envFrom:
-          - secretRef:
-            name: joint-env
+        - secretRef:
+          name: joint-env
+        ports:
         - containerPort: 8000 #8080
           protocol: TCP
       # - restartPolicy: OnFailure
