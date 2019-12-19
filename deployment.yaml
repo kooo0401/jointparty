@@ -17,10 +17,10 @@ spec:
       - name: django-cluster
         image: gcr.io/jointparty/django-cluster:latest
         ports:
+        envFrom:
+          - secretRef:
+            name: my-env-file-secret
         - containerPort: 8000 #8080
           protocol: TCP
-        envFrom:
-        - secretRef:
-          name: from-env-file
       # - restartPolicy: OnFailure
   revisionHistoryLimit: 100
