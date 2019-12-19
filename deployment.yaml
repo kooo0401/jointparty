@@ -19,6 +19,8 @@ spec:
         ports:
         - containerPort: 8000 #8080
           protocol: TCP
+        envFrom:
+        - secretRef:
+          name: my-env-file-secret
       # - restartPolicy: OnFailure
   revisionHistoryLimit: 100
-  
