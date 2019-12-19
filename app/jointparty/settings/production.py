@@ -3,9 +3,6 @@ import os
 import environ
 
 BASE_DIR = environ.Path(__file__) - 3
-SECRET_KEY = os.environ.get("SECRET_KEY")
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
-DEBUG = int(os.environ.get("DEBUG"))
 
 env = environ.Env()
 
@@ -14,7 +11,11 @@ READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=True)
 if READ_ENV_FILE:
     env_file = str(BASE_DIR.path('.env.prod'))
     env.read_env(env_file)
- 
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
+DEBUG = int(os.environ.get("DEBUG"))
+
 
 # 一旦コメントアウト、後ほど20191219
 # DATABASES = {
