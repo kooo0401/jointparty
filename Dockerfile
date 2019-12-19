@@ -2,7 +2,7 @@
 FROM python:3.8
 
 # 作業ディレクトリを設定
-WORKDIR /app
+WORKDIR /usr/src
 
 # 環境変数を設定
 # Pythonがpyc filesとdiscへ書き込むことを防ぐ
@@ -22,17 +22,17 @@ RUN pip install --upgrade pip \
     && pip install pipenv
 
 # ホストのpipfileをコンテナの作業ディレクトリにコピー
-COPY Pipfile ./
-COPY Pipfile.lock ./
+COPY Pipfile /usr/src/Pipfile
+COPY Pipfile.lock /usr/src/Pipfile.lock
 
 # pipfileからパッケージをインストールしてDjango環境を構築
 RUN pipenv install --system --ignore-pipfile
 
 # entrypoint.shをコピー
-COPY entrypoint.sh ./
+COPY entrypoint.sh /usr/src/entrypoint.sh
 
 # ホストのカレントディレクトリ（現在はappディレクトリ）を作業ディレクトリにコピー
-COPY . .
+COPY . /usr/src/
 
 # entrypoint.shを実行
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/entrypoint.sh"]
