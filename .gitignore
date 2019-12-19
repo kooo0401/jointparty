@@ -90,9 +90,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-# .env.prod
-# .env.prod.db
-# 解決策見つからない為一旦デプロイ20191219
+.env.prod
 
 # Spyder project settings
 .spyderproject

@@ -12,16 +12,12 @@ if READ_ENV_FILE:
     env_file = str(BASE_DIR.path('.env.prod'))
     env.read_env(env_file)
 
-SECRET_KEY = "=llv2rzj$^vk)wx7n_u9v$o(ic2i-7w)m&0il3vlamiei2#&d6"
-ALLOWED_HOSTS = []
-DEBUG = False
+SECRET_KEY = os.environ.get("SECRET_KEY")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
+DEBUG = int(os.environ.get("DEBUG"))
+
 
 # 一旦コメントアウト、後ほど20191219
-
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
-# DEBUG = 0
-
 # DATABASES = {
 #     'default': env.prod.db()
 # }

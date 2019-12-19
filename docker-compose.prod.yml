@@ -33,7 +33,7 @@ services:
         # データベースの永続化
         volumes:
             - postgres_data:/var/lib/postgresql/data
-        env_file: .env.prod.db
+        env_file: .env.prod
         # ports:
         #     - "5432:5432"
 
