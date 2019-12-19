@@ -32,8 +32,7 @@ services:
         image: postgres:12.0-alpine
         # データベースの永続化
         volumes:
-            # - postgres_data:/var/lib/postgresql/data ←本来すべき記述20191219
-            - ./postgres_data:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql/data
         env_file: .env.prod.db
         # ports:
         #     - "5432:5432"
