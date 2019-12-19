@@ -21,4 +21,3 @@ spec:
           protocol: TCP
       # - restartPolicy: OnFailure
   revisionHistoryLimit: 100
-  
