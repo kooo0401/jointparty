@@ -11,4 +11,6 @@ then
     echo "PostgreSQL started"
 fi
 
+cd app && gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
+
 exec "$@"

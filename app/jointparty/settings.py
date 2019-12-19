@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'imagekit',
     'fontawesome',
+    # 'gunicorn'
 ]
 
 MIDDLEWARE = [
