@@ -5,7 +5,7 @@ import environ
 BASE_DIR = environ.Path(__file__) - 3
 SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
-DEBUG = int(os.environ.get("DEBUG"))
+DEBUG = 0
 
 env = environ.Env()
 
