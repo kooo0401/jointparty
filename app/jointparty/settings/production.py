@@ -14,6 +14,8 @@ if READ_ENV_FILE:
  
 DEBUG = int(os.environ.get("DEBUG"))
 
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+
 # 一旦コメントアウト、後ほど20191219
 # DATABASES = {
 #     'default': env.prod.db()

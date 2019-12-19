@@ -14,6 +14,7 @@ if READ_ENV_FILE:
  
 DEBUG = int(os.environ.get("DEBUG"))
 
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
