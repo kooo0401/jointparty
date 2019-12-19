@@ -23,10 +23,4 @@ spec:
         - containerPort: 8000 #8080
           protocol: TCP
       # - restartPolicy: OnFailure
-  containers:
-  - name:
-    image:
-    env:
-    - name: SECRET_KEY
-      value: =llv2rzj$^vk)wx7n_u9v$o(ic2i-7w)m&0il3vlamiei2#&d6
   revisionHistoryLimit: 100
