@@ -4,13 +4,13 @@ import environ
 
 BASE_DIR = environ.Path(__file__) - 3
 
-env = environ.Env()
+# env = environ.Env()
 
-# 環境変数でDJANGO_READ_ENV_FILEをTrueにしておくと.envを読んでくれる。
-READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=True)
-if READ_ENV_FILE:
-    env_file = str(BASE_DIR.path('.env.prod'))
-    env.read_env(env_file)
+# # 環境変数でDJANGO_READ_ENV_FILEをTrueにしておくと.envを読んでくれる。
+# READ_ENV_FILE = env.bool('DJANGO_READ_ENV_FILE', default=True)
+# if READ_ENV_FILE:
+#     env_file = str(BASE_DIR.path('.env.prod'))
+#     env.read_env(env_file)
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS") #.split(" ")
