@@ -30,8 +30,8 @@ services:
         # データベースの永続化
         # ホストのディレクトリにマウントしない様、先頭に`./`をつけない
         volumes:
-            # - postgres_data:/var/lib/postgresql/data ←本来すべき記述20191219
-            - ./postgres_data:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql/data
+            # - ./postgres_data:/var/lib/postgresql/data
         # su権限を持つ、指定されたユーザーと同じ名前のデータベースを作成
         # valueはdjangoサービスで指定したものと同じ様に記載
         environment:
