@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       name: django-cluster
