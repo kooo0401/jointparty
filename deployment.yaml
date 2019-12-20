@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       name: django-cluster
@@ -12,6 +12,7 @@ spec:
       labels:
         name: django-cluster
         cluster_name: django-cluster
+    # GCP Kubernetes Engine ワークロードにデプロイ
     spec:
       containers:
       - name: django-cluster
