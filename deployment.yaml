@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       name: django-cluster
@@ -23,7 +23,6 @@ spec:
         ports:
         - containerPort: 80 #8080
           protocol: TCP
-
     # spec:
     #   containers:
     #   - name: nginx
