@@ -13,7 +13,8 @@ if READ_ENV_FILE:
     env.read_env(env_file)
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = [*]
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 DEBUG = int(os.environ.get("DEBUG"))
 
 # GKE_DEPLOY = env.bool('GKE_DEPLOY', default=False)
