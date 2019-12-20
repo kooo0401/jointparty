@@ -37,4 +37,4 @@ COPY . /usr/src/
 # entrypoint.shを実行  
 ENTRYPOINT ["/usr/src/entrypoint.prod.sh"]
 
-FROM nginx:1.17.4-alpine
+# FROM nginx:1.17.4-alpine
