@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       name: django-cluster
@@ -12,6 +12,7 @@ spec:
       labels:
         name: django-cluster
         cluster_name: django-cluster
+    # GCP Kubernetes Engine ワークロードにデプロイ
     spec:
       containers:
       - name: django-cluster
@@ -20,7 +21,14 @@ spec:
         # - secretRef:
         #   name: joint-env
         ports:
-        - containerPort: 8000 #8080
+        - containerPort: 80 #8080
           protocol: TCP
-      # - restartPolicy: OnFailure
+
+    # spec:
+    #   containers:
+    #   - name: nginx
+    #     image: nginx:1.17.4
+    #     ports:
+    #     - containerPort: 8000
+      
   revisionHistoryLimit: 100
