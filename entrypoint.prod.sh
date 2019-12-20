@@ -14,6 +14,8 @@ fi
 # cd app && gunicorn jointparty.wsgi:application --bind 0.0.0.0:8000
 # cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 jointparty.wsgi --error-logfile FILE
 cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 jointparty.wsgi
+docker-compose -f docker-compose.prod.yml exec django python app/manage.py migrate --noinput
+docker-compose -f docker-compose.prod.yml exec django python app/manage.py collectstatic --no-input --clear
 
 
 exec "$@"
