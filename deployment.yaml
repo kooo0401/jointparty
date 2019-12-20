@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       name: django-cluster
@@ -16,9 +16,11 @@ spec:
       containers:
       - name: django-cluster
         image: gcr.io/jointparty/django-cluster:latest
+        # envFrom:
+        # - secretRef:
+        #   name: joint-env
         ports:
         - containerPort: 8000 #8080
           protocol: TCP
       # - restartPolicy: OnFailure
   revisionHistoryLimit: 100
-  
