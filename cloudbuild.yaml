@@ -2,7 +2,8 @@ steps:
 # Dockerfileを利用してアプリとイメージのビルドを行う。$_VERSIONはトリガーの変数として設定します。
 # $PROJECT_IDには使用中のプロジェクトIDが自動的に挿入される
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', 'Dockerfile.prod', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
+  # args: ['build', '-f', 'Dockerfile.prod', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
+  args: ['build', '-f', 'docker-compose.prod.yml', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
 # 作成したdjango-clusterイメージをPUSHする
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/django-cluster:$_VERSION"]
