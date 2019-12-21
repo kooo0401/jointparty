@@ -28,16 +28,16 @@ COPY Pipfile.lock /usr/src/Pipfile.lock
 # pipfileからパッケージをインストールしてDjango環境を構築
 RUN pipenv install --system --ignore-pipfile
 
-# entrypoint.shをコピー  
-COPY entrypoint.sh /usr/src/entrypoint.sh  
+# entrypoint.shをコピー
+COPY entrypoint.sh /usr/src/entrypoint.sh
 
-# ホストのカレントディレクトリ（現在はappディレクトリ）を作業ディレクトリにコピー  
+# ホストのカレントディレクトリ（現在はappディレクトリ）を作業ディレクトリにコピー
 COPY . /usr/src/
 
-# entrypoint.shを実行  
+# entrypoint.shを実行
 ENTRYPOINT ["/usr/src/entrypoint.prod.sh"]
 
 # FROM nginx:1.17.4-alpine
 
 # RUN rm /etc/nginx/conf.d/default.conf
-# COPY app/nginx.conf /etc/nginx/conf.d
+# COPY nginx/nginx.prod.conf /etc/nginx/conf.d
