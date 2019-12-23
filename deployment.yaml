@@ -23,13 +23,13 @@ spec:
         ports:
         - containerPort: 8000 #8080
           protocol: TCP
-    spec:
-      containers:
-      - name: django-cluster
-        image: gcr.io/jointparty/nginx/django-cluster:latest
-        ports:
-        - containerPort: 8000 #8080
-          protocol: TCP
+    # spec:
+    #   containers:
+    #   - name: django-cluster
+    #     image: gcr.io/jointparty/nginx/django-cluster:latest
+    #     ports:
+    #     - containerPort: 8000 #8080
+    #       protocol: TCP
 
     # spec:
     #   containers:
