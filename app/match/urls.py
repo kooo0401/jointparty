@@ -11,6 +11,7 @@ urlpatterns = [
     path('logout/', index.Logout.as_view(), name='logout'),
     path('users/', user.gets, name='users'),
     path('users/signup/', user.signup, name='signup'),
+    path('users/profile/<int:user_id>', user.profile),
 ]
 
 if settings.DEBUG:

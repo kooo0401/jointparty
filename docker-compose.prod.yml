@@ -40,7 +40,8 @@ services:
         volumes:
             - static_volume:/usr/src/app/staticfiles
         ports:
-            - 1400:80
+            - 80:80
+            # 左にデフォルト80を記載することで今回の場合"localhost"
         depends_on:
             - django
 
