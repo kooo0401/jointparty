@@ -104,3 +104,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# DBデータ（volume）は削除する
+postgres_data
+postgresql_data
+
+app/staticfiles
+.DS_Store
+app/media/photos
+settings_delete.py
