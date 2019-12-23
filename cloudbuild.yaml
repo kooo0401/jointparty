@@ -8,7 +8,7 @@ steps:
 # 作成したdjango-clusterイメージをPUSHする
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/django-cluster:$_VERSION"]
-  - name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID_nginx/django-cluster:$_VERSION"]
 # Clusterを取得。$_ZONEはトリガーの変数として設定します。
 - name: 'gcr.io/cloud-builders/gcloud'
