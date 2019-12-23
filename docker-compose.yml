@@ -15,7 +15,7 @@ services:
             - ./:/usr/src/
         # 開放するポートを指定。`host:container`でポートを記載  
         ports:
-            - 80:8000
+            - 8000:8000
         # 環境変数を指定
         # environment:
         env_file:
