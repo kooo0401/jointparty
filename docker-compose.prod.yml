@@ -28,7 +28,7 @@ services:
         image: postgres:12.0-alpine
         # データベースの永続化
         volumes:
-            - postgres_data:/var/lib/postgresql/data
+            - ./postgres_data:/var/lib/postgresql/data
         env_file: app/.env.prod
         expose:
             - 5432

@@ -31,7 +31,7 @@ services:
         # ホストのディレクトリにマウントしない様、先頭に`./`をつけない
         volumes:
             # - postgres_data:/var/lib/postgresql/data
-            - ./postgres_data:/var/lib/postgresql/data
+            - ./postgresql_data:/var/lib/postgresql/data
         # su権限を持つ、指定されたユーザーと同じ名前のデータベースを作成
         # valueはdjangoサービスで指定したものと同じ様に記載
         environment:
@@ -41,4 +41,4 @@ services:
 
 # トップレベルに書く「名前付きvolumes」は複数サービスから参照できる
 volumes:
-    postgres_data:
+    postgresql_data:
