@@ -22,7 +22,7 @@ steps:
   - 'apply'
   - '--filename=deployment.yaml'
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=django-cluster'
 
 timeout: 1000s

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: django-cluster
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       name: django-cluster
@@ -21,7 +21,7 @@ spec:
         # - secretRef:
         #   name: joint-env
         ports:
-        - containerPort: 80 #8080
+        - containerPort: 8000 #8080
           protocol: TCP
 
     # spec:

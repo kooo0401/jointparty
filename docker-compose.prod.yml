@@ -28,7 +28,7 @@ services:
         image: postgres:12.0-alpine
         # データベースの永続化
         volumes:
-            - postgres_data:/var/lib/postgresql/data
+            - ./postgres_data:/var/lib/postgresql/data
         env_file: app/.env.prod
         expose:
             - 5432
@@ -40,7 +40,8 @@ services:
         volumes:
             - static_volume:/usr/src/app/staticfiles
         ports:
-            - 1400:80
+            - 80:80
+            # 左にデフォルト80を記載することで今回の場合"localhost"
         depends_on:
             - django
 
