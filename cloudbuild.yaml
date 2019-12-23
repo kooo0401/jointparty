@@ -4,10 +4,12 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-f', 'Dockerfile.prod', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', 'nginx/Dockerfile', '--tag=gcr.io/$PROJECT_ID/django-cluster:$_VERSION', '.']
+  args: ['build', '-f', 'nginx/Dockerfile', '--tag=gcr.io/$PROJECT_ID_nginx/django-cluster:$_VERSION', '.']
 # 作成したdjango-clusterイメージをPUSHする
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/$PROJECT_ID/django-cluster:$_VERSION"]
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ["push", "gcr.io/$PROJECT_ID_nginx/django-cluster:$_VERSION"]
 # Clusterを取得。$_ZONEはトリガーの変数として設定します。
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
