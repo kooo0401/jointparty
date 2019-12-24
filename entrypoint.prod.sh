@@ -16,8 +16,8 @@ fi
 cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 jointparty.wsgi
 # cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 34.84.99.154:80 jointparty.wsgi
 
-docker-compose -f docker-compose.prod.yml exec django python app/manage.py migrate --noinput
-docker-compose -f docker-compose.prod.yml exec django python app/manage.py collectstatic --no-input --clear
+sudo docker-compose -f docker-compose.prod.yml exec django python app/manage.py migrate --noinput
+sudo docker-compose -f docker-compose.prod.yml exec django python app/manage.py collectstatic --no-input --clear
 
 
 exec "$@"

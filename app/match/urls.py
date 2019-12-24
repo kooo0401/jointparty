@@ -12,6 +12,7 @@ urlpatterns = [
     path('users/', user.gets, name='users'),
     path('users/signup/', user.signup, name='signup'),
     path('users/profile/<int:user_id>', user.profile),
+    path('users/<int:user_id>/edit/', user.edit),
 ]
 
 if settings.DEBUG:
