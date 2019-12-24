@@ -1,0 +1,11 @@
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="topPage">
+    {% for user in form.exclude_userlist %}
+    {{ user.name }}<br>
+    {% endfor %}
+</div>

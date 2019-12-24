@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from match.forms.user_signup import SignupForm
 from match.forms.user_profile import ProfileForm
 from match.forms.user_edit import EditForm
+from match.forms.user_list import UserListForm
 
 def signup(request):
     if request.method == 'GET':
@@ -23,9 +24,14 @@ def signup(request):
     return HttpResponse(template.render(context, request))
 
 def gets(request):
-    template = loader.get_template('users.html')
+    current_userid = request.user.id
+    if request.method == 'GET':
+        form = UserListForm(request.GET or None)
+        form.load(current_userid)
+
+    template = loader.get_template('match/users.html')
     context = {
-        'form': '',
+        'form': form,
     }
     return HttpResponse(template.render(context, request))
 
