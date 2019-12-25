@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, user
+from .views import index, user, post
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -12,7 +12,9 @@ urlpatterns = [
     path('users/', user.gets, name='users'),
     path('users/signup/', user.signup, name='signup'),
     path('users/profile/<int:user_id>', user.profile),
-    path('users/<int:user_id>/edit/', user.edit),
+    path('users/<int:c>/edit/', user.edit),
+    path('users/<int:user_id>/create/', post.create, name='create'),
+    path('users/<int:user_id>/posts/', post.gets, name='posts'),
 ]
 
 if settings.DEBUG:
