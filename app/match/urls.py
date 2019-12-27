@@ -12,9 +12,9 @@ urlpatterns = [
     path('users/', user.gets, name='users'),
     path('users/signup/', user.signup, name='signup'),
     path('users/profile/<int:user_id>', user.profile),
-    path('users/<int:c>/edit/', user.edit),
-    path('users/<int:user_id>/create/', post.create, name='create'),
-    path('users/<int:user_id>/posts/', post.gets, name='posts'),
+    path('users/<int:user_id>/edit/', user.edit),
+    path('users/<int:user_id>/create/', post.CreateView.as_view(), name='create'),
+    path('users/<int:user_id>/posts/', post.PostListView.as_view(), name='posts'),
 ]
 
 if settings.DEBUG:

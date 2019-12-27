@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div class="topPage">
+    <div class="linkToLogin"><a href="/users/{{user.id}}/create">投稿</a></div>
     {% for user in form.exclude_userlist %}
     {{ user.name }}<br>
     {% endfor %}

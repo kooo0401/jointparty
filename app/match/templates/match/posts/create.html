@@ -12,7 +12,7 @@
         <div>募集フォームを作成</div>
     </header>
     <div class="container">
-        <form class="mt-5" id="post_create" enctype="multipart/form-data" accept-charset="UTF-8" method="POST" action="{% url 'match:create' %}">
+        <form class="mt-5" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' user.id %}">
         {% csrf_token %}
 
             <div class="form-group">
@@ -24,9 +24,21 @@
               {{ form.number }}
             </div>
             <div class="form-group">
-              <label>開催地</label>
-              {{ form.venue }}
+                <label>開催日</label>
+                {{ form.date }}
             </div>
+            <div class="form-group">
+                <label>日時</label>
+                {{ form.time }}
+            </div>
+            <div class="form-group">
+                <label>開催地</label>
+                {{ form.venue }}
+            </div>
+            {% if form.errors %}
+                {{ form.non_field_errors }}
+            {% endif %}
+
             <div class="text-center">
                 {% buttons %}
                 <input type="submit" class="btn submitBtn" value="投稿" />

@@ -1,0 +1,12 @@
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="topPage">
+    <div class="linkToLogin"><a href="/users/{{user.id}}/create">募集フォームを開く</a></div>
+    {% for post in posts %}
+        {{ post.title }}<br>
+    {% endfor %}
+</div>

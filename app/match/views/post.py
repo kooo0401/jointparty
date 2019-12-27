@@ -1,40 +1,54 @@
-from django.shortcuts import render, loader, redirect
-from django.http import HttpResponse
-from match.forms.post_create import CreateForm
+# クラスベースビューで記載
 
-def create(request, user_id):
-    # current_userid = request.user.id
-    if request.method == 'GET':
-        form = CreateForm()
-    else:
+from django.shortcuts import render, loader, redirect
+from match.forms.post_create import CreateForm
+from django.urls import reverse
+from django.views.generic import TemplateView
+from match.models.posts import Posts
+
+
+class CreateView(TemplateView):
+    template_name = 'match/posts/create.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def post(self, request, user_id, *args, **kwargs):
         form = CreateForm(request.POST)
         if form.is_valid():
-            print('post_create is_valid')
-            form.save(request.POST)
+            print("検証に成功しました。データを保存します")
+            form.save(request.POST, user_id)
             return redirect('/users/')
         else:
-            print('post_create false is_valid')
+            print("検証に失敗したので、データを保存しません。検証に失敗した理由を次に表示します。")
+            print(form.errors)
+        # return redirect(reverse('match:create', user_id))
+        return redirect('/users/'+ str(user_id)+'/create/')
 
-    template = loader.get_template('match/posts/create.html')
-    context = {
-        'form': form,
-    }
-    return HttpResponse(template.render(context, request))
+class PostListView(TemplateView):
+    def get(self, request, user_id, *args, **kwargs):
+        posts = Posts.objects.all().order_by('-id')
+
+        return render(request, 'match/posts/posts.html', {'posts': posts})
 
 
-def gets(request, user_id):
-    return render(request, 'match/posts/posts.html')
-    # current_userid = request.user.id
-    if request.method == 'GET':
-        form = CreateForm(requests.GET or None)
-        form.load(user_id)
-        data = {
-            'form': form,
-            'isurrent': request.use.id == user_id,
-        }
 
-    template = loader.get_template('match/posts/posts.html')
-    context = {
-        'form': form,
-    }
-    return HttpResponse(template.render(context, request))
+    #     class CreateView(TemplateView):
+    # template_name = 'match/posts/create.html'
+    # def get(self, request, *args, **kwargs):
+    #     context = {
+    #         'form': CreateForm(),
+    #     }
+    #     return context
+
+    # def post(self, request, user_id, *args, **kwargs):
+    #     form = CreateForm(request.POST)
+    #     if form.is_valid():
+    #         print("検証に成功しました。データを保存します")
+    #         form.save(request.POST, user_id)
+    #         return redirect('/users/')
+    #     else:
+    #         print("検証に失敗したので、データを保存しません。検証に失敗した理由を次に表示します。")
+    #         print(form.errors)
+    #     # return redirect(reverse('match:create', user_id))
+    #     return redirect('/users/'+ str(user_id)+'/create/')
