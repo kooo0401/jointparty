@@ -1,54 +1,39 @@
 # クラスベースビューで記載
 
 from django.shortcuts import render, loader, redirect
-from match.forms.post_create import CreateForm
+from match.forms.post_create import PostsCreateForm
 from django.urls import reverse
-from django.views.generic import TemplateView
+from django.views.generic import ListView, CreateView
 from match.models.posts import Posts
+from django.urls import reverse_lazy
 
 
-class CreateView(TemplateView):
-    template_name = 'match/posts/create.html'
+class PostsCreateView(CreateView):
+    model = Posts
+    form_class = PostsCreateForm
+    success_url = reverse_lazy('match:posts_list')
+
+    def form_valid(self, form):
+        form.instance.user_id = self.request.user.id
+        form.instance.userinfo_id = self.request.user.id
+
+        return super(PostsCreate, self).form_valid(form)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
 
-    def post(self, request, user_id, *args, **kwargs):
-        form = CreateForm(request.POST)
-        if form.is_valid():
-            print("検証に成功しました。データを保存します")
-            form.save(request.POST, user_id)
-            return redirect('/users/')
-        else:
-            print("検証に失敗したので、データを保存しません。検証に失敗した理由を次に表示します。")
-            print(form.errors)
-        # return redirect(reverse('match:create', user_id))
-        return redirect('/users/'+ str(user_id)+'/create/')
+class PostListView(ListView):
+    model = Posts
+    # ログインユーザー以外の投稿数を数値で取得(LisViewでデフォルトで返されるcontextの"object_list"を上書き)
+    def get_queryset(self):
+        current_user_id = self.request.user.id
+        query_set = Posts.objects.exclude(userinfo_id=current_user_id).count()
+        return query_set
 
-class PostListView(TemplateView):
-    def get(self, request, user_id, *args, **kwargs):
-        posts = Posts.objects.all().order_by('-id')
-
-        return render(request, 'match/posts/posts.html', {'posts': posts})
-
-
-
-    #     class CreateView(TemplateView):
-    # template_name = 'match/posts/create.html'
-    # def get(self, request, *args, **kwargs):
-    #     context = {
-    #         'form': CreateForm(),
-    #     }
-    #     return context
-
-    # def post(self, request, user_id, *args, **kwargs):
-    #     form = CreateForm(request.POST)
-    #     if form.is_valid():
-    #         print("検証に成功しました。データを保存します")
-    #         form.save(request.POST, user_id)
-    #         return redirect('/users/')
-    #     else:
-    #         print("検証に失敗したので、データを保存しません。検証に失敗した理由を次に表示します。")
-    #         print(form.errors)
-    #     # return redirect(reverse('match:create', user_id))
-    #     return redirect('/users/'+ str(user_id)+'/create/')
+    # ログインユーザー以外の投稿を全て取得
+    def get_context_data(self, **kwargs):
+        current_user_id = self.request.user.id
+        context = super().get_context_data(**kwargs)
+        context["posts_list"] = Posts.objects.exclude(userinfo_id=current_user_id).order_by('-id')
+        return context

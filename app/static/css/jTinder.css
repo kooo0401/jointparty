@@ -61,7 +61,7 @@ body {
 }
 
 
-#tinderslide > li .userName {
+#tinderslide > li .postsName {
   position: absolute;
   bottom: 5px;
   color: #000;
@@ -88,7 +88,7 @@ body {
   display: block;
 }
 
-#tinderslide > li .userName {
+#tinderslide > li .postsName {
   position: absolute;
   bottom: 5px;
   color: #000;
