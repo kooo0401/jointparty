@@ -17,7 +17,7 @@ class PostsCreateView(CreateView):
         form.instance.user_id = self.request.user.id
         form.instance.userinfo_id = self.request.user.id
 
-        return super(PostsCreate, self).form_valid(form)
+        return super(PostsCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

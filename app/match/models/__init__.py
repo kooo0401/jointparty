@@ -1,1 +1,1 @@
-from . import image, userinfo, posts, reaction
+from . import image, userinfo, posts, reaction, chatroom, chatroomuser, chatmessage
