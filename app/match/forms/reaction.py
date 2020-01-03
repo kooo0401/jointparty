@@ -15,6 +15,7 @@ from django import forms
 from match.models.posts import Posts
 from match.models.reaction import Reaction
 
+
 class ReactionForm(forms.Form):
     LIKE = 0
     reaction_users = Reaction()
@@ -28,7 +29,6 @@ class ReactionForm(forms.Form):
         mylikeusers = self.__toFromIdsArray(Reaction.objects.filter(from_user_id=user_id, status=self.LIKE))
         self.reaction_users = Reaction.objects.filter(to_post_id__in=mylikeusers, status=self.LIKE, from_user_id=user_id)
         self.count = len(self.reaction_users)
-        # self.image = 
 
 
     def __toFromIdsArray(self, mylike_users):

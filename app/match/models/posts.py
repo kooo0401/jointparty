@@ -5,7 +5,8 @@ from django.utils import timezone
 class Posts(models.Model):
     userinfo = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
-    number = models.IntegerField(null=False)
+    men_number = models.IntegerField(null=False)
+    women_number = models.IntegerField(null=False)
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
     venue = models.CharField(max_length=30)

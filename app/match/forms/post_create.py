@@ -8,7 +8,8 @@ class PostsCreateForm(forms.ModelForm):
         model = Posts
         fields = (
             'title',
-            'number',
+            'men_number',
+            'women_number',
             'date',
             'time',
             'venue',
@@ -17,7 +18,10 @@ class PostsCreateForm(forms.ModelForm):
             "title": forms.TextInput(
             attrs={'placeholder':'例)  職業◯◯、平均年齢25歳です', 'class':'form-control'}),
             
-            "number": forms.NumberInput(
+            "men_number": forms.NumberInput(
+            attrs={'placeholder':'例)  4', 'class':'form-control'}),
+
+            "women_number": forms.NumberInput(
             attrs={'placeholder':'例)  4', 'class':'form-control'}),
 
             "date": forms.SelectDateWidget,
