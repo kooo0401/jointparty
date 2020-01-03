@@ -7,6 +7,6 @@
 <div class="topPage">
     <div class="linkToLogin"><a href="/users/{{user.id}}/create">投稿</a></div>
     {% for user in form.exclude_userlist %}
-    {{ user.name }}<br>
+        <div class="linkToLogin"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></div>
     {% endfor %}
 </div>

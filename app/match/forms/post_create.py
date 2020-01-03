@@ -13,6 +13,20 @@ class PostsCreateForm(forms.ModelForm):
             'time',
             'venue',
         )
+        widgets = {
+            "title": forms.TextInput(
+            attrs={'placeholder':'例)  職業◯◯、平均年齢25歳です', 'class':'form-control'}),
+            
+            "number": forms.NumberInput(
+            attrs={'placeholder':'例)  4', 'class':'form-control'}),
+
+            "date": forms.SelectDateWidget,
+
+            "time": forms.TimeInput,
+
+            "venue": forms.TextInput(
+            attrs={'placeholder':'例)  渋谷', 'class':'form-control'}),
+        }
 
 
     # error_message = ''
