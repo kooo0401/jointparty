@@ -1,0 +1,65 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% block content %}
+<!-- {% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %} -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/create.css' %}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/timedropper/1.0/timedropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timedropper/1.0/timedropper.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="createpage">
+    <header class="header">
+        <div>募集フォームを作成</div>
+    </header>
+    <div class="createcontainer">
+        <form class="mt-5 createform" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' user.id %}">
+        {% csrf_token %}
+
+            <div class="form-group">
+                <label>タイトル</label><br>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <label>募集人数（男）</label><br>
+                {{ form.men_number }}
+            </div>
+            <div class="form-group">
+                <label>募集人数（女）</label><br>
+                {{ form.women_number }}
+            </div>
+            <div class="form-group">
+                <label>開催日</label><br>
+                {{ form.date }}
+            </div>
+            <div class="form-group">
+                <label>日時</label><br>
+                {{ form.time }}
+            </div>
+            <div class="form-group">
+                <label>開催地</label><br>
+                {{ form.venue }}
+            </div>
+            {% if form.errors %}
+                {{ form.non_field_errors }}
+            {% endif %}
+
+            <div class="text-center">
+                {% buttons %}
+                <input type="submit" class="btn submitBtn" value="投稿" />
+                {% endbuttons %}
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(function () {
+        // timedropper
+        $("#id_time").timeDropper({
+            format: "H:mm",
+            setCurrentTime: false,
+        });
+    });
+</script>
+{% endblock %}

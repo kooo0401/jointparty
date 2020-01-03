@@ -1,0 +1,12 @@
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="topPage">
+    <div class="linkToLogin"><a href="/users/{{user.id}}/create">投稿</a></div>
+    {% for user in form.exclude_userlist %}
+        <div class="linkToLogin"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></div>
+    {% endfor %}
+</div>

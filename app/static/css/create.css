@@ -1,0 +1,63 @@
+.createpage {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  width: 100vw;
+  height: 80px;
+  background-color: #4866c9;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+}
+
+.createcontainer {
+  width: 100vw;
+}
+
+.createform {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+#id_title, #id_number, #id_date_year, #id_date_month, #id_date_day, #id_venue {
+  color: #000;
+}
+#id_date_year {
+  width: 150px;
+  height: 38px;
+  background-color: #fff;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  border: 1px solid #ced4da;
+}
+
+#id_date_month {
+  width: 150px;
+  height: 38px;
+  background-color: #fff;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  border: 1px solid #ced4da;
+}
+
+#id_date_day {
+  width: 150px;
+  height: 38px;
+  background-color: #fff;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  border: 1px solid #ced4da;
+
+}
+
+#id_time {
+  width: 450px;
+  height: 38px;
+  background-color: #fff;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}

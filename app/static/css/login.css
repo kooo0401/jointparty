@@ -3,7 +3,7 @@
 }
 
 .title {
-  color:#fd5068;
+  color:#4866c9;
   margin: 20px 0;
   text-align: center;
 }
@@ -13,7 +13,7 @@
   height: 120px;
   border-radius: 50%;
   margin: 0 auto;
-  background: #fd5068;
+  background: #4866c9;
   color: #fff;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
   padding: 12px;
   width: 200px;
   border-radius: 21px;
-  background: #fd5068;
+  background: #4866c9;
   color: #fff;
   text-align: center;
   border: none;
@@ -39,5 +39,5 @@
 }
 
 .linkToLogin a {
-  color: #fd5068;
+  color: #4866c9;
 }
