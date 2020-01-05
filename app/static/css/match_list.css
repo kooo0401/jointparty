@@ -64,6 +64,13 @@
   margin: 0 0 0 20px;
 }
 
+.matchingPerson_venue {
+  font-size: 12px;
+  color: #111111;
+  margin: 0 0 0 20px;
+  width: 50px;
+}
+
 .matchingPerson_date {
   width: 140px;
   font-size: 12px;
@@ -71,10 +78,32 @@
   margin: 0 0 0 20px;
 }
 
-.matchingPerson_name {
+.matchingPerson_men {
   font-size: 12px;
   color: #111111;
   margin: 0 0 0 20px;
+}
+
+.matchingPerson_women {
+  font-size: 12px;
+  color: #111111;
+  margin: 0 0 0 20px;
+}
+
+.matchingPerson_add {
+  font-size: 12px;
+  color: #111111;
+  margin: 0 0 0 120px;
+}
+
+.matchlist_button {
+  border: none;
+  padding: 10px;
+  background: #fd5068;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity .3s;
 }
 
 .matchingPage .matchingList form {
@@ -101,12 +130,55 @@
   width: 50px;
 }
 
-.matchlist_text {
-  width: 72px;
+.listbox {
+  height: 22px;
+  width: 100%;
+}
+
+.matchlist_text_title {
+  width: 55px;
   background: #999999;
   padding: 2px 4px;
+  margin: 0 130px;
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
   vertical-align: top;
+  float: left;
+}
+
+.matchlist_text_venue {
+  width: 45px;
+  background: #999999;
+  padding: 2px 4px;
+  margin: 0 0 0 115px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  float: left;
+}
+
+.matchlist_text_date {
+  width: 35px;
+  background: #999999;
+  padding: 2px 4px;
+  margin: 0 25px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  float: left;
+}
+
+.matchlist_text_sex {
+  width: 100px;
+  background: #999999;
+  padding: 2px 4px;
+  margin: 0 100px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  float: left;
 }

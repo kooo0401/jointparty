@@ -39,6 +39,14 @@ services:
             - POSTGRES_PASSWORD=hello_django
             - POSTGRES_DB=django_db
 
+    redis:
+        image: redis:latest
+        ports:
+            - 6379:6379
+        volumes:
+            - ./data/redis:/data
+        command: redis-server --appendonly yes
+
 # トップレベルに書く「名前付きvolumes」は複数サービスから参照できる
 volumes:
     postgresql_data:

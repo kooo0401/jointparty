@@ -5,6 +5,7 @@ from match.forms.post_create import PostsCreateForm
 from django.urls import reverse
 from django.views.generic import ListView, CreateView
 from match.models.posts import Posts
+from match.models.userinfo import UserInfo
 from django.urls import reverse_lazy
 
 
@@ -37,3 +38,17 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context["posts_list"] = Posts.objects.exclude(userinfo_id=current_user_id).order_by('-id')
         return context
+        
+# "参加する"ボタン押下時の計算処理
+def calculation(request, post_id):
+    current_user = UserInfo.objects.get(pk=request.user.id)
+    if current_user.sex == "man":
+        add_post = Posts.objects.get(pk=post_id)
+        add_post.men_restriction -= 1
+        add_post.save()
+    else:
+        add_post = Posts.objects.get(pk=post_id)
+        add_post.women_restriction -= 1
+        add_post.save()
+    
+    return redirect('/users/' + str(current_user.id) +'/matching/')

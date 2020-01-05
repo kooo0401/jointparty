@@ -37,12 +37,14 @@ def messages(room_id):
         })
     return retmessages
 
-def registmessage(room_id, user_id, message):
+def registmessage(room_id, user_id, post_id, message):
     messages = ChatMessage()
     user = UserInfo.objects.get(pk=user_id)
+    post = Posts.objects.get(pk=post_id)
     room = ChatRoom.objects.get(pk=room_id)
     messages.chat_room = room
     messages.user = user
+    messages.post = post
     messages.message = message
     messages.save()
 

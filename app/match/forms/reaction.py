@@ -20,7 +20,8 @@ class ReactionForm(forms.Form):
     LIKE = 0
     reaction_users = Reaction()
     count = -1
-    # image = Posts.objects.get(userinfo_id:)
+    # men_restriction = []
+    # women_restriction = []
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,6 +31,10 @@ class ReactionForm(forms.Form):
         self.reaction_users = Reaction.objects.filter(to_post_id__in=mylikeusers, status=self.LIKE, from_user_id=user_id)
         self.count = len(self.reaction_users)
 
+        # # "参加する"ボタン押下後の減算処理計算
+        # for postuser in self.reaction_users:
+        #     self.men_restriction = postuser.to_post.men_number - postuser.to_post.men_restriction
+        #     self.women_restriction = postuser.to_post.women_number - postuser.to_post.women_restriction
 
     def __toFromIdsArray(self, mylike_users):
         mylike_userids = list()

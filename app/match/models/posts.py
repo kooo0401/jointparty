@@ -10,6 +10,8 @@ class Posts(models.Model):
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
     venue = models.CharField(max_length=30)
+    men_restriction = models.IntegerField(default=0)
+    women_restriction = models.IntegerField(default=0)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     objects = models.Manager
