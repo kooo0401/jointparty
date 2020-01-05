@@ -81,6 +81,19 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
 
+# Redis(Websocket)関連の設定
+ASGI_APPLICATION = 'jointparty.routing.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis", 6379)],
+            # "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 

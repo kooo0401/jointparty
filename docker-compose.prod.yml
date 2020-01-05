@@ -17,6 +17,7 @@ services:
         # 開放するポートを指定。`host:container`でポートを記載
         expose:
             - 8000
+            - 8001
         # 環境変数を指定
         env_file: app/.env.prod
         # 接続するサービスを指定
@@ -44,6 +45,15 @@ services:
             # 左にデフォルト80を記載することで今回の場合"localhost"
         depends_on:
             - django
+    
+    redis:
+        image: redis:latest
+        ports:
+            - 6379:6379
+        volumes:
+            - ./data/redis:/data
+        command: redis-server --appendonly yes
+
 
 
 # トップレベルに書く「名前付きvolumes」は複数サービスから参照できる
