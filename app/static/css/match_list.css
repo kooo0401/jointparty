@@ -90,6 +90,10 @@
   margin: 0 0 0 20px;
 }
 
+.chatForm_addbtn {
+  margin: 0 150px 0 0;
+}
+
 .matchingPerson_add {
   font-size: 12px;
   color: #111111;
