@@ -22,6 +22,7 @@ urlpatterns = [
     path('chat/create/<int:post_id>', chat.create, name='chat_create'),
     path('chat/show/<int:room_id>', chat.show, name='chat_show'),
     path('chat/show/<int:room_id>/messages/', chat.messages, name='chat_messages'),
+    path('posts/calculation/<int:post_id>', post.calculation),
 ]
 
 if settings.DEBUG:

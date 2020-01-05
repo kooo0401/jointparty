@@ -3,7 +3,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/match_list.css' %}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<script src="{% static 'js/user.js' %}"></script>
+<script src="{% static 'js/users.js' %}"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div class="matchingPage">
@@ -21,7 +21,13 @@
             {{ form.count }}組の気になる合コンがあります
         </div>
         <h2 class="pageTitle">一覧</h2>
-        <div class="matchingList">
+            <div class="matchingList">
+                <div class="listbox">
+                <div class="matchlist_text_title">タイトル</div>
+                <div class="matchlist_text_venue">開催地</div>
+                <div class="matchlist_text_date">日時</div>
+                <div class="matchlist_text_sex">募集人数(男・女)</div>
+            </div>
             {% for matching in form.reaction_users %}
             <div class="matchingPerson">
                 <div class="matchingPerson_img">
@@ -29,30 +35,28 @@
                 </div>
                 <a href="/users/profile/{{ matching.to_post.userinfo.id }}", class="username">{{ matching.to_post.userinfo.name }}</a>
                 <div class="matchingPerson_title">
-                    <p class="matchlist_text">タイトル</p>
                     <h6>{{ matching.to_post.title }}</h6>
                 </div>
-                <div class="matchingPerson_name">
-                    <p class="matchlist_text">開催地</p>
+                <div class="matchingPerson_venue">
                     <h6>{{ matching.to_post.venue }}</h6>
                 </div>
                 <div class="matchingPerson_date">
-                    <p class="matchlist_text">日時</p>
                     <h6>{{ matching.to_post.date }}</h6>
                 </div>
-                <div class="matchingPerson_name">
-                    <p class="matchlist_text">募集人数(男)</p>
-                    <h6>{{ matching.to_post.men_number }}人</h6>
-                </div>
-                <div class="matchingPerson_name">
-                    <p class="matchlist_text">募集人数(女)</p>
-                    <h6>{{ matching.to_post.women_number }}人</h6>
+                <div class="matchingPerson_men">
+                    <h6>{{ matching.to_post.men_number | add:matching.to_post.men_restriction }}人・{{ matching.to_post.women_number|add:matching.to_post.women_restriction }}人</h6>
                 </div>
 
-                <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+                <form action="/posts/calculation/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post">
+                    <div class="matchingPerson_add">
+                        <button class="matchlist_button">参加する</button>
+                    </div>
+                    {% csrf_token %}
+                </form>
+                <!-- <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
                     {% csrf_token %}
                     <input type="submit" name="commit" value="チャットを開く" class="chatForm_btn" data-disable-with="チャットを開く" />
-                </form>
+                </form> -->
             </div>
             {% endfor %}
         </div>

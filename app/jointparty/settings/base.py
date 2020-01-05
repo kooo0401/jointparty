@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'imagekit',
     'fontawesome',
-    # 'gunicorn'
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +80,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

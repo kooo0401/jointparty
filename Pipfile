@@ -14,6 +14,8 @@ pillow = "*"
 fontawesome = "*"
 django-imagekit = "*"
 django-debug-toolbar = "*"
+channels = "*"
+channels-redis = "*"
 
 [requires]
 python_piiversion = "3.8"
