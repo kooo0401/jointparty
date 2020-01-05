@@ -47,16 +47,16 @@
                     <h6>{{ matching.to_post.men_number | add:matching.to_post.men_restriction }}人・{{ matching.to_post.women_number|add:matching.to_post.women_restriction }}人</h6>
                 </div>
 
-                <form action="/posts/calculation/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post">
+                <form action="/posts/calculation/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post" class="chatForm_addbtn">
                     <div class="matchingPerson_add">
                         <button class="matchlist_button">参加する</button>
                     </div>
                     {% csrf_token %}
                 </form>
-                <!-- <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+                <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
                     {% csrf_token %}
                     <input type="submit" name="commit" value="チャットを開く" class="chatForm_btn" data-disable-with="チャットを開く" />
-                </form> -->
+                </form>
             </div>
             {% endfor %}
         </div>

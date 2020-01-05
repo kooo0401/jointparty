@@ -112,4 +112,4 @@ postgresql_data
 app/staticfiles
 .DS_Store
 app/media/photos/19
-settings_delete.py
+data
