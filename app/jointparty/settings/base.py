@@ -72,15 +72,6 @@ TEMPLATES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
-STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(ROOT_DIR, 'static'),
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
-
 # Redis(Websocket)関連の設定
 ASGI_APPLICATION = 'jointparty.routing.application'
 
