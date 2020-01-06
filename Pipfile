@@ -16,6 +16,7 @@ django-imagekit = "*"
 django-debug-toolbar = "*"
 channels = "*"
 channels-redis = "*"
+django-storages = {extras = ["google"],version = "*"}
 
 [requires]
 python_piiversion = "3.8"
