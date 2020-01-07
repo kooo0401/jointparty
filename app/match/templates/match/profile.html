@@ -17,11 +17,11 @@
         </header>
         <div class='userInfo'>
             <div class='userInfo_img'>
-                {% if DEBUG %}
-                <img src="https://storage.cloud.google.com/jointparty/{{ form.image.origin }}">
-                {% else %}
+            {% if DEBUG %}
                 <img src="/media/{{ form.image.origin }}">
-                {% endif %}
+            {% else %}
+                <img src="https://storage.cloud.google.com/jointparty/{{ form.image.origin }}">
+            {% endif %}
             </div>
             <div class='userInfo_name'>{{ form.info.name }}</div>
             <div class='userInfo_selfIntroduction'>

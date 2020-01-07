@@ -31,7 +31,11 @@
             {% for matching in form.reaction_users %}
             <div class="matchingPerson">
                 <div class="matchingPerson_img">
+                {% if DEBUG %}
                     <img src="/media/{{ matching.to_post.userinfo.image.origin }}">
+                {% else %}
+                    <img src="https://storage.cloud.google.com/jointparty/{{ matching.to_post.userinfo.image.origin }}">
+                {% endif %}
                 </div>
                 <a href="/users/profile/{{ matching.to_post.userinfo.id }}", class="username">{{ matching.to_post.userinfo.name }}</a>
                 <div class="matchingPerson_title">
