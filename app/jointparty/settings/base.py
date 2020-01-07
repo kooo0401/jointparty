@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'imagekit',
     'fontawesome',
-    'channels'
+    'channels',
 ]
 
 MIDDLEWARE = [
