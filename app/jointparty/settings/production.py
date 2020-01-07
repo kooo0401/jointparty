@@ -30,21 +30,30 @@ DATABASES = {
     }
 }
 
+# 本番環境で画像アップロード機能でCloud Storageに保存-----------------------
+
+# STATIC_URL = '/staticfiles/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
 STATIC_URL = '/staticfiles/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(ROOT_DIR, 'static'),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-GS_BUCKET_NAME = '[YOUR_BUCKET_NAME_GOES_HERE]'
-
+GS_BUCKET_NAME = 'jointparty'
+# ↓今だけココに記載2020/1/7
 from google.oauth2 import service_account
 
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, '[YOUR_AUTHENTICATON_KEY_FILE_NAME].json'),
+    os.path.join(BASE_DIR, 'jointparty-7f2e032fe49f.json'),
 )
+# --------------------------------------------------------------------
 
 # else:
 #     DATABASES = {
