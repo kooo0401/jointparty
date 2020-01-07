@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'jointparty.context_processors.is_debug',
             ],
             'builtins': [ # bootstrap適用
                 'bootstrap4.templatetags.bootstrap4',

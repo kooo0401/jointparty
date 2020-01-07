@@ -11,7 +11,11 @@
         <a class="linkToMatching" href="/posts_list/"></a>
         <div class="chatPartner">
         <div class="chatPartner_img">
+        {% if DEBUG %}
             <img src="/media/{{ form.roomuser.user.image.origin }}">
+        {% else %}
+            <img src="https://storage.cloud.google.com/jointparty/{{ form.roomuser.user.image.origin }}">
+        {% endif %}
         </div>
         <div class="chatPartner_name">{{ form.roomuser.user.name }}</div>
         </div>
