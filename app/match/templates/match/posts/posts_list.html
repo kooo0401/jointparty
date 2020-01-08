@@ -39,7 +39,7 @@
             {% if DEBUG %}
                 <img src="/media/{{ post.userinfo.image.origin }}">
             {% else %}
-                <img src="https://storage.cloud.google.com/jointparty/{{ form.image.origin }}">
+                <img src="https://storage.cloud.google.com/jointparty/{{ post.userinfo.image.origin }}">
             {% endif %}
             <div class="like"></div>
             <div class="dislike"></div>
