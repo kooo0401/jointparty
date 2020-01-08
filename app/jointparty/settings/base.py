@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # テンプレートでデバック状態を明記 {% if DEBUG %}を使用可能にする
                 'jointparty.context_processors.is_debug',
             ],
             'builtins': [ # bootstrap適用

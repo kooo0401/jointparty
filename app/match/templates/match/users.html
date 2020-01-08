@@ -2,11 +2,19 @@
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/users.css' %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="topPage">
-    <div class="linkToLogin"><a href="/users/{{user.id}}/create">投稿</a></div>
-    {% for user in form.exclude_userlist %}
-        <div class="linkToLogin"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></div>
-    {% endfor %}
+<div class="createpage">
+    <header class="header">
+        <div>ログインユーザー</div>
+    </header>
+
+    <div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成</a>
+        <ul class="UserProfileList">
+            {% for user in form.exclude_userlist %}
+                <li class="ProfileName"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
