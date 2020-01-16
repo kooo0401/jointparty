@@ -1,5 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import (LogoutView)
 
 class LoginForm(AuthenticationForm):
     """ログインフォーム"""
@@ -17,3 +19,6 @@ class LoginForm(AuthenticationForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
+
+class Logout(LoginRequiredMixin, LogoutView):
+    template_name = 'match/login.html'

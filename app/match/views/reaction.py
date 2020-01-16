@@ -33,7 +33,10 @@
 from django.shortcuts import render, loader
 from django.http import HttpResponse
 from match.forms.reaction import ReactionForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def matching(request, user_id):
     form = ReactionForm(request.GET)
     form.load(request.user.id)

@@ -8,7 +8,7 @@
 
 <div class="chatPage">
     <header class="header">
-        <a class="linkToMatching" href="/posts_list/"></a>
+        <a class="linkToMatching" href="{% url 'match:matching' request.user.id %}"></a>
         <div class="chatPartner">
         <div class="chatPartner_img">
         {% if DEBUG %}

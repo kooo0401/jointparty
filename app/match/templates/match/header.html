@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  メニュー
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'match:posts_list' %}">投稿一覧</a>
+                    <a class="dropdown-item" href="{% url 'match:matching' request.user.id %}">マッチング一覧</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="mypage_button" href="{% url 'match:profile' request.user.id %}">マイページ</a>
+            </li>
+            <li class="dropdown">
+                <a class="logout_button" href="{% url 'match:logout' %}">ログアウト</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+# from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from match.models.posts import Posts
 
 class PostsCreateForm(forms.ModelForm):

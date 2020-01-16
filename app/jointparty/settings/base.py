@@ -120,5 +120,6 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 1
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/users/'
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/users'
+LOGOUT_REDIRECT_URL='/login'

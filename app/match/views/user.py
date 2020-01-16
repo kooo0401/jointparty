@@ -4,6 +4,8 @@ from match.forms.user_signup import SignupForm
 from match.forms.user_profile import ProfileForm
 from match.forms.user_edit import EditForm
 from match.forms.user_list import UserListForm
+from django.contrib.auth.decorators import login_required
+
 
 def signup(request):
     if request.method == 'GET':
@@ -45,10 +47,11 @@ def profile(request, user_id):
         }
         return render(request, 'match/profile.html', data)
 
+@login_required
 def edit(request, user_id):
     if request.method == 'GET':
         form = EditForm(request.GET or None)
-        form.load(user_id)
+        form.nad(user_id)
     else:
         form = EditForm(request.POST or None, request.FILES)
         if form.is_valid():
