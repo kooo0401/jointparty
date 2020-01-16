@@ -1,12 +1,37 @@
+.navbar {
+  background-color: #4866c9;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
 .mypage_button {
-  color: rgba(0,0,0,.5);
+  color: white;
   display: block;
-  padding: .5rem 1rem;
-  float: right;
+  padding: .5rem;
+}
+.mypage_button:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
+.logout_button:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
 }
 
 .logout_button {
-  color: rgba(0,0,0,.5);
+  color: white;
   display: block;
-  padding: .5rem 1rem;
+  padding: .5rem;
 }
+
