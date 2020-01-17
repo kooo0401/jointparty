@@ -16,7 +16,7 @@
 
 .head_title {
   max-width: 400px;
-  margin: 10px auto 10px;
+  margin: 40px auto 10px;
   text-align: center;
   background-color: #eee;
   padding: 5px 0 5px 0;
@@ -41,9 +41,15 @@
   margin: 30px auto;
 }
 
-.btn-square:active {
+.btn-square:hover {
   /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
+.caution_text {
+  color: #525252;
+  position: absolute;
+  padding-left: 50px;
 }

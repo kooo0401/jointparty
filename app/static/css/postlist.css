@@ -7,13 +7,13 @@ body {
   /* 2枚目の背景画像の表示位置 */
   right 20px center;
 
-background-repeat:
+  background-repeat:
   /* 1枚目の背景画像の設定 */
   no-repeat,
   /* 2枚目の背景画像の設定 */
   no-repeat;
 
-background-size:
+  background-size:
   /* 1、2枚目の背景画像の共通サイズ */
   50%;
   

@@ -14,7 +14,7 @@
             {% if DEBUG %}
                 <img src="/media/{{ user.image.origin }}" class="list_image">
                 {% else %}
-                <img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}">
+                <img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}" class="list_image">
             {% endif %}
                 <a href="/users/profile/{{ user.id }}" class="list_name">{{ user.name }}</a>
             </li>
