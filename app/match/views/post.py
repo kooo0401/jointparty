@@ -7,9 +7,10 @@ from django.views.generic import ListView, CreateView
 from match.models.posts import Posts
 from match.models.userinfo import UserInfo
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class PostsCreateView(CreateView):
+class PostsCreateView(CreateView, LoginRequiredMixin):
     model = Posts
     form_class = PostsCreateForm
     success_url = reverse_lazy('match:posts_list')
@@ -24,7 +25,7 @@ class PostsCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         return context
 
-class PostListView(ListView):
+class PostListView(ListView, LoginRequiredMixin):
     model = Posts
     # ログインユーザー以外の投稿数を数値で取得(LisViewでデフォルトで返されるcontextの"object_list"を上書き)
     def get_queryset(self):
@@ -38,7 +39,7 @@ class PostListView(ListView):
         context = super().get_context_data(**kwargs)
         context["posts_list"] = Posts.objects.exclude(userinfo_id=current_user_id).order_by('-id')
         return context
-        
+
 # "参加する"ボタン押下時の計算処理
 def calculation(request, post_id):
     current_user = UserInfo.objects.get(pk=request.user.id)

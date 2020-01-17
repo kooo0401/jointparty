@@ -1,15 +1,12 @@
-.createpage {
-  width: 100vw;
-  height: 100vh;
-}
 
-.header {
-  width: 100vw;
-  height: 80px;
-  background-color: #4866c9;
-  color: #fff;
+.head_title {
+  max-width: 400px;
+  margin: 10px auto -30px ;
   text-align: center;
-  line-height: 80px;
+  background-color: #eee;
+  padding: 5px 0 5px 0;
+  border: 1px solid rgba(96, 96, 96, 0.2);
+  border-radius: 5rem;
 }
 
 .createcontainer {
@@ -21,45 +18,13 @@
   margin: 0 auto;
 }
 
-#id_title, #id_number, #id_date_year, #id_date_month, #id_date_day, #id_venue {
+#id_title, #id_men_number, #id_women_number, #id_date, #id_time, #id_venue {
   color: #000;
-}
-#id_date_year {
-  width: 150px;
-  height: 38px;
-  background-color: #fff;
-  padding: .375rem .75rem;
-  font-weight: 400;
-  border: 1px solid #ced4da;
-}
-
-#id_date_month {
-  width: 150px;
-  height: 38px;
-  background-color: #fff;
-  padding: .375rem .75rem;
-  font-weight: 400;
-  border: 1px solid #ced4da;
-}
-
-#id_date_day {
-  width: 150px;
-  height: 38px;
-  background-color: #fff;
-  padding: .375rem .75rem;
-  font-weight: 400;
-  border: 1px solid #ced4da;
-
 }
 
 #id_time {
-  width: 450px;
-  height: 38px;
   background-color: #fff;
-  padding: .375rem .75rem;
-  font-weight: 400;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
+  cursor: text;
 }
 
 .btn-square {
@@ -80,4 +45,18 @@
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
+}
+
+.half_form {
+  width: 30%;
+  display: inline-block;
+}
+
+.left_form {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.fixed_form {
+  margin-right: 50px;
 }

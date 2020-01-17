@@ -1,20 +1,24 @@
+{% extends "match/base.html" %}
 {% load static %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
-
+{% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/users.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="createpage">
-    <header class="header">
-        <div>ログインユーザー</div>
-    </header>
-
-    <div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成</a>
-        <ul class="UserProfileList">
-            {% for user in form.exclude_userlist %}
-                <li class="ProfileName"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></li>
-            {% endfor %}
-        </ul>
-    </div>
+<div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a>
+    <ul>
+        {% for user in form.exclude_userlist %}
+            <li class="user_profile_list">
+            {% if DEBUG %}
+                <img src="/media/{{ user.image.origin }}" class="list_image">
+                {% else %}
+                <img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}">
+            {% endif %}
+                <a href="/users/profile/{{ user.id }}" class="list_name">{{ user.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 </div>
+{% endblock %}

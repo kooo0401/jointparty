@@ -1,0 +1,37 @@
+.navbar {
+  background-color: #4866c9;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
+.mypage_button {
+  color: white;
+  display: block;
+  padding: .5rem;
+}
+.mypage_button:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
+.logout_button:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
+
+.logout_button {
+  color: white;
+  display: block;
+  padding: .5rem;
+}
+

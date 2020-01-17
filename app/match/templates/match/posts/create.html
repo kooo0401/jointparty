@@ -1,44 +1,48 @@
 {% extends "match/base.html" %}
 {% load static %}
 {% block content %}
-<!-- {% bootstrap_css %}
-{% bootstrap_javascript jquery='full' %} -->
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/create.css' %}">
+<!-- 時間入力のテンプレート -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/timedropper/1.0/timedropper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timedropper/1.0/timedropper.min.js"></script>
+<!-- 日付カレンダー入力のテンプレート -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <div class="createpage">
-    <header class="header">
-        <div>募集フォームを作成</div>
-    </header>
+    <div class='head_title'>募集フォームを作成</div>
     <div class="createcontainer">
-        <form class="mt-5 createform" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' user.id %}">
+        <form class="mt-5 createform" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' user.id %}" autocomplete="off">
         {% csrf_token %}
 
             <div class="form-group">
-                <label>タイトル</label><br>
+                <label>タイトル</label>
                 {{ form.title }}
             </div>
-            <div class="form-group">
-                <label>募集人数（男）</label><br>
+            <div class="form-group half_form left_form">
+                <label>募集人数<br>（男性）</label>
                 {{ form.men_number }}
             </div>
-            <div class="form-group">
-                <label>募集人数（女）</label><br>
+            <div class="form-group half_form fixed_form">
+                <label><br>（女性）</label>
                 {{ form.women_number }}
             </div>
-            <div class="form-group">
+            <div class="form-group half_form left_form">
                 <label>開催日</label><br>
                 {{ form.date }}
             </div>
-            <div class="form-group">
-                <label>時間</label><br>
+            <div class="form-group half_form">
+                <label>時間</label>
                 {{ form.time }}
             </div>
             <div class="form-group">
-                <label>開催地</label><br>
+                <label>開催地</label>
                 {{ form.venue }}
             </div>
             {% if form.errors %}
@@ -59,6 +63,11 @@
         $("#id_time").timeDropper({
             format: "H:mm",
             setCurrentTime: false,
+        });
+        // 日付は、年-月-日 の形式でお願いする。
+        let dateFormat = 'yy-mm-dd';
+        $('#id_date').datepicker({
+            dateFormat: dateFormat
         });
     });
 </script>
