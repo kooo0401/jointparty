@@ -56,7 +56,7 @@ def profile(request, pk):
 
 # カレントユーザー以外は404エラーを発生させる
 class OnlyYouMixin(UserPassesTestMixin):
-    raise_exception = True
+    raise_exception = False
 
     def test_func(self):
         user = self.request.user

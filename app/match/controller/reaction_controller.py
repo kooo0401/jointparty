@@ -5,7 +5,6 @@ from match.models.posts import Posts
 def create(request):
     fromuser_id = request.user.id
     post = request.POST
-    print(post)
     post_id = post["post_id"]
     reaction_status = post["reaction"]
     reactions = Reaction.objects.filter(to_post_id=post_id, from_user_id=fromuser_id)

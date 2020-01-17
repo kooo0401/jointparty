@@ -11,7 +11,7 @@
 
 <div class="topPage">
     <div class="swipe_text">
-        気になる投稿をスワイプしてください
+        気になる投稿を気軽にスワイプしてください
     </div>
     <div id="tinderslide">
         <ul>
@@ -25,11 +25,16 @@
             {% endif %}
             <div class="like"></div>
             <div class="dislike"></div>
-            <h3>制限人数  男 <b>{{ post.men_number }}</b> 人、女 <b>{{ post.women_number }}</b> 人</h3>
+            <h3 class="recruitment_number">募集人数</h3>
+            {% if post.userinfo.sex == "man" %}
+                <p>男性 <b class="men_number">{{ post.men_number| add:-1 }}</b> 人　女性 <b class="women_number">{{ post.women_number }}</b> 人</p>
+            {% else %}
+                <p>男性 <b class="men_number">{{ post.men_number }}</b> 人　女性 <b class="women_number">{{ post.women_number| add:-1 }}</b> 人</p>
+            {% endif %}
             </li>
             {% endfor %}
         </ul>
-        <div class="noUser">全ての投稿をスワイプしました。<br><br>
+        <div class="noUser">全ての投稿をスワイプしました<br><br>
             <a href="{% url 'match:matching' request.user.id %}"  class="btn-square">お気に入り一覧</a>
         </div>
 
