@@ -61,7 +61,11 @@ body {
 
 .topPage #tinderslide > ul > li > img {
   width: 267px;
-  height: 400px;
+  height: 300px;
+}
+
+#tinderslide {
+  height: 65vh;
 }
 
 .swipe_text {
@@ -72,4 +76,16 @@ body {
   padding: 5px 0 5px 0;
   border: 1px solid rgba(96, 96, 96, 0.2);
   border-radius: 5rem;
+}
+
+.recruitment_number {
+  margin: 10px 0;
+}
+
+.men_number {
+  color: blue;
+}
+
+.women_number {
+  color: red;
 }
