@@ -25,12 +25,14 @@
             {% endif %}
             <div class="like"></div>
             <div class="dislike"></div>
-            <h3>制限人数  男 {{ post.men_number }} 人、女 {{ post.women_number }} 人</h3>
-
+            <h3>制限人数  男 <b>{{ post.men_number }}</b> 人、女 <b>{{ post.women_number }}</b> 人</h3>
             </li>
             {% endfor %}
         </ul>
-        <div class="noUser">近くにお相手がいません。</div>
+        <div class="noUser">全ての投稿をスワイプしました。<br><br>
+            <a href="{% url 'match:matching' request.user.id %}"  class="btn-square">お気に入り一覧</a>
+        </div>
+
     </div>
     <div class="actions" id="actionBtnArea">
         {% csrf_token %}
@@ -85,7 +87,7 @@
     });
     function checkPostsNum() {
         if (currentPostsIndex === postsNum){
-            $(".noPosts").addClass("is-active");
+            $(".noUser").addClass("is-active");
             $("#actionBtnArea").addClass("is-none")
             return;
         }
@@ -103,21 +105,4 @@
         return "";
     }
 </script>
-
-    <!-- <script>
-      $("#tinderslide").jTinder();
-      $('.actions .like, .actions .dislike').click(function(e){
-          e.preventDefault();
-          $("#tinderslide").jTinder($(this).attr('class'));
-      });
-    </script> -->
-
-
-
-
-    <!-- <div class="linkToLogin"><a href="/users/{{user.id}}/create">募集フォームを開く</a></div>
-    {% for post in posts %}
-        {{ post.title }}<br>
-    {% endfor %}
-</div> -->
 {% endblock %}

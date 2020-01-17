@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.userinfo {
+  margin: 50px 0;
+}
+
 .userInfo_img {
   width: 170px;
   height: 170px;
@@ -34,6 +38,7 @@
 
 .usershowPage .userInfo_selfIntroduction {
   margin-top: 30px;
+  text-align: center;
 }
 
 .usershowPage .userAction {

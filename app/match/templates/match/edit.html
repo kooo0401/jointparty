@@ -8,6 +8,7 @@
 <div class='userEditPage'>
     <div class='head_title'>アカウント編集</div>
     <div class='container'>
+        <p class="caution_text">※ ログインIDの変更はありません</p>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
