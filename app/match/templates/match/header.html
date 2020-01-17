@@ -14,6 +14,8 @@
                   メニュー
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'match:create' request.user.id %}">募集フォーム作成</a>
+                    <a class="dropdown-item" href="{% url 'match:users' %}">ユーザーリスト</a>
                     <a class="dropdown-item" href="{% url 'match:posts_list' %}">投稿一覧</a>
                     <a class="dropdown-item" href="{% url 'match:matching' request.user.id %}">マッチング一覧</a>
                 </div>

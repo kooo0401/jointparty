@@ -8,9 +8,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a>
-    <ul class="UserProfileList">
+    <ul>
         {% for user in form.exclude_userlist %}
-            <li class="ProfileName"><a href="/users/profile/{{ user.id }}">{{ user.name }}<br></a></li>
+            <li class="user_profile_list">
+            {% if DEBUG %}
+                <img src="/media/{{ user.image.origin }}" class="list_image">
+                {% else %}
+                <img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}">
+            {% endif %}
+                <a href="/users/profile/{{ user.id }}" class="list_name">{{ user.name }}</a>
+            </li>
         {% endfor %}
     </ul>
 </div>

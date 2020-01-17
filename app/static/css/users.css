@@ -1,10 +1,14 @@
+body {
+  background-image: url("../images/sora.jpg");
+  background-size: 100%;
+}
 .createcontainer {
   width: 100vw;
 }
 
 .linkToCreate {
   color: #4866c9;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -29,30 +33,29 @@
   opacity:0.6;
 }
 
-.UserProfileList {
-  padding: 0;
+.user_profile_list {
+  list-style: none;
+  width: 260px;
+  float: left;
+  text-align: center;
 }
 
-.UserProfileList .ProfileName {
-  position: relative;
-  list-style-type: none!important;/*ポチ消す*/
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin-bottom: 5px;
-  line-height: 1.5;
-  background: #dbebf8;
-  vertical-align: middle;
-  color: #505050;
-  border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
-}
-
-.UserProfileList .ProfileName:before{ 
-  display:inline-block; 
-  vertical-align: middle;
-  /*以下白丸つくる*/
-  content:'';
-  width:1em;
-  height: 1em;
-  background: #fff;
+.list_image {
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  margin-right: 8px;
+  overflow: hidden;
+}
+
+.list_name {
+  display: block;
+  color: #eee;
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.list_name:hover {
+  text-decoration: none;
+  color: #eee;
+  opacity: 0.6;
 }
