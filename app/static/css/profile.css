@@ -23,6 +23,7 @@
 
 .usershowPage .userInfo_img>img {
   width: 100%;
+  height: 100%;
 }
 
 .usershowPage .userInfo_name {

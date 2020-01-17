@@ -1,9 +1,5 @@
-.userEditPage .header {
-  padding: 20px;
-  margin-bottom: 40px;
-  text-align: center;
-  background: #4866c9;
-  color: #fff;
+.userEditPage {
+  height: max-content;
 }
 .userEditPage .submitBtn {
   background: #4866c9;
@@ -16,4 +12,38 @@
 
 .userEditPage .submitBtn:hover {
   opacity: .6;
+}
+
+.head_title {
+  max-width: 400px;
+  margin: 10px auto 10px;
+  text-align: center;
+  background-color: #eee;
+  padding: 5px 0 5px 0;
+  border: 1px solid rgba(96, 96, 96, 0.2);
+  border-radius: 5rem;
+}
+
+.userInfo {
+  margin-top: 50px;
+}
+
+.btn-square {
+  padding: 0.8em 3.5em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  height: 50px;
+  max-width: 240px;
+  display: block;
+  margin: 30px auto;
+}
+
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
 }
