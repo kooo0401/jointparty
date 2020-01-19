@@ -23,6 +23,7 @@ services:
         # 接続するサービスを指定
         depends_on:
             - postgres
+            - redis
 
     postgres:
         # 公式からイメージをpull
@@ -54,21 +55,21 @@ services:
             - ./data/redis:/data
         command: redis-server --appendonly yes
 
-    https-portal:
-        image: steveltn/https-portal:1
-        ports:
-            - 80:80
-            - 443:443
-        links:
-            - nginx
-        environment:
-            DOMAINS: koo0401.ml -> http://nginx:8000
-            STAGE: production
-        depends_on:
-            - nginx
-        restart: always
-        volumes:
-            - ./org-chimata-ssl-certs:/var/lib/https-portal
+    # https-portal:
+    #     image: steveltn/https-portal:1
+    #     ports:
+    #         - 80:80
+    #         - 443:443
+    #     links:
+    #         - nginx
+    #     environment:
+    #         DOMAINS: koo0401.ml -> http://nginx:8000
+    #         STAGE: production
+    #     depends_on:
+    #         - nginx
+    #     restart: always
+    #     volumes:
+    #         - ./org-chimata-ssl-certs:/var/lib/https-portal
 
 # トップレベルに書く「名前付きvolumes」は複数サービスから参照できる
 volumes:

@@ -11,7 +11,8 @@ then
     echo "PostgreSQL started"
 fi
 
-cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 jointparty.wsgi && daphne -b 0.0.0.0 -p 8001 jointparty.asgi:application
-# cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 &amp; daphne -b 0.0.0.0 -p 8001 jointparty.wsgi
+# gunicornの起動・及びwebsocket通信の為のdaphne起動
+cd app && gunicorn --env DJANGO_SETTINGS_MODULE=jointparty.settings.production --bind 0.0.0.0:8000 jointparty.wsgi
+cd app daphne -b 0.0.0.0 -p 8001 jointparty.asgi:application
 
 exec "$@"
