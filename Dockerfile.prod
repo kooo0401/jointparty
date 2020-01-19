@@ -19,13 +19,6 @@ ENV PYTHONUNBUFFERED 1
 # psycopg2のインストール
 RUN pip install psycopg2-binary
 
-# # chat機能の為、Websocker用supervisorをインストール
-# RUN apt-get update && apt-get install -y openssh-server apache2 supervisor
-# RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
-
-# # supervisor設定ファイルをコピー
-# COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 # Pipenvをインストール
 RUN pip install --upgrade pip \
     && pip install pipenv
