@@ -65,6 +65,9 @@ services:
         environment:
             DOMAINS: koo0401.ml -> http://nginx:8000
             STAGE: production
+            # Websocket通信を許可する ※Trueにしないとハンドシェイクエラー発生する
+            WEBSOCKET: "true"
+            FORCE_RENEW: 'false'
         depends_on:
             - nginx
         restart: always
