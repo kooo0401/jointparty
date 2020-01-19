@@ -41,7 +41,7 @@
     var chatSocket = new WebSocket(
         // 'ws://' + window.location.host +
         'wss://' + window.location.host +
-        '/wss/chat/' + room_id + '/');
+        '/ws/chat/' + room_id + '/');
     chatSocket.onmessage = function(e) {
         var data = JSON.parse(e.data);
         var username = data['username'];
