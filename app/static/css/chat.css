@@ -40,7 +40,7 @@
 
 .chatPage .messagesArea {
   overflow: scroll;
-  height: 72vh;
+  height: 63vh;
 }
 
 .chatPage .messagesArea .message .selfMessage {

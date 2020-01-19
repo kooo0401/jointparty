@@ -18,9 +18,10 @@ class ChatForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def load(self, user_id, room_id):
+    def load(self, user_id, room_id, request):
         # post_user = ChatRoomUser.objects.get(chat_room_id=room_id)
         self.room = ChatRoom.objects.get(pk=room_id)
         self.roomuser = ChatRoomUser.objects.get(Q(chat_room=self.room), ~Q(user=UserInfo.objects.get(pk=user_id)))
         self.room_id = self.room.id
         self.current_user_name = UserInfo.objects.get(pk=user_id).name
+        self.current_user_id = request.user.id
