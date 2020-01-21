@@ -187,3 +187,14 @@
   vertical-align: top;
   float: left;
 }
+
+.approval_button {
+  border: none;
+  padding: 10px;
+  background: gray;
+  color: #fff;
+  border-radius: 6px;
+  transition: opacity .3s;
+  position: absolute;
+  right: 0;
+}

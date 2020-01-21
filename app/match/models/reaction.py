@@ -6,3 +6,4 @@ class Reaction(models.Model):
     to_post = models.ForeignKey(Posts, related_name="toid", on_delete=models.CASCADE)
     from_user = models.ForeignKey(UserInfo, related_name="fromid", on_delete=models.CASCADE)
     status = models.IntegerField(primary_key=False)
+    approval = models.IntegerField(default=0)

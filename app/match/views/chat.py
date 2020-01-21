@@ -14,7 +14,7 @@ def create(request, post_id):
 @login_required
 def show(request, room_id):
     form = ChatForm(request.GET)
-    form.load(request.user.id, room_id)
+    form.load(request.user.id, room_id, request)
     context = {
         'form': form
     }
