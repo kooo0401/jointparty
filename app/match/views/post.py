@@ -6,8 +6,10 @@ from django.urls import reverse
 from django.views.generic import ListView, CreateView
 from match.models.posts import Posts
 from match.models.userinfo import UserInfo
+from match.models.reaction import Reaction
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 
 
 class PostsCreateView(CreateView, LoginRequiredMixin):
@@ -47,9 +49,28 @@ def calculation(request, post_id):
         add_post = Posts.objects.get(pk=post_id)
         add_post.men_restriction -= 1
         add_post.save()
+        # Reactionテーブルのapprovalカラムを"1"に
+        add_approval = []
+        add_approval = Reaction.objects.get(Q(to_post=post_id), Q(from_user=request.user.id))
+        add_approval.approval += 1
+        add_approval.save()
     else:
         add_post = Posts.objects.get(pk=post_id)
         add_post.women_restriction -= 1
         add_post.save()
-    
+        # Reactionテーブルのapprovalカラムを"1"に
+        add_approval = []
+        add_approval = Reaction.objects.get(Q(to_post=post_id), Q(from_user=request.user.id))
+        add_approval.approval += 1
+        add_approval.save()
+
     return redirect('/users/' + str(current_user.id) +'/matching/')
+
+def approval(request, post_id):
+
+    add_approval = []
+    add_approval = Reaction.objects.get(to_post=post_id)
+    add_approval.approval += 1
+    add_approval.save()
+
+    return redirect('/users/profile/' + str(request.user.id))

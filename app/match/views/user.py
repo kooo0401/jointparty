@@ -8,10 +8,15 @@ from django.views.generic import FormView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from match.models.userinfo import UserInfo
 from match.models.image import Image
+from match.models.posts import Posts
+from match.models.reaction import Reaction
+from match.models.chatroomuser import ChatRoomUser
 from django.urls import reverse_lazy
 from match.forms.user_edit import UserUpdateForm
 from django.urls import reverse
 from django import forms
+from django.db.models import Prefetch
+
 
 
 def signup(request):
@@ -45,12 +50,23 @@ def gets(request):
     return HttpResponse(template.render(context, request))
 
 def profile(request, pk):
+    mypost = []
+    approval_user = []
+
+    # 自分が投稿したポストを逆参照で取得
+    mypost = Posts.objects.filter(userinfo_id=pk)
+    # 自分が投稿したポストに"参加する"ボタンを押したユーザーを配列で取得
+    for post in mypost:
+        approval_user.append(Reaction.objects.filter(to_post=post.id))
+
     if request.method == 'GET':
         form = ProfileForm(request.GET or None)
         form.load(pk)
         data = {
             'form': form,
             'iscurrent': request.user.id == pk,
+            'mypost': mypost,
+            'approval_user': approval_user,
         }
         return render(request, 'match/profile.html', data)
 

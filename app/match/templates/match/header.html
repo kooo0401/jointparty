@@ -22,7 +22,7 @@
             </li>
         </ul>
         <div class="dropdown">
-            <a class="mypage_button" href="{% url 'match:profile' request.user.id %}">マイページ <i class="fas fa-user"></i></a>
+            <a class="mypage_button" href="{% url 'match:profile' request.user.id %}">{{request.user}}さんのマイページ <i class="fas fa-user"></i></a>
         </div>
         <div class="dropdown">
             <a class="logout_button" href="{% url 'match:logout' %}">ログアウト <i class="fas fa-sign-out-alt"></i></a>
