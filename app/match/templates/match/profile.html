@@ -26,7 +26,7 @@
         <a href="{% url 'match:chat_show' 4 %}">{{ post.id }}</a>
         {% endfor %} -->
 
-        <!-- {% for appuser in approval_user %}
+        {% for appuser in approval_user %}
             {% for app in appuser %}
                 <p>{{app.to_post.title}}</p>
                 <form action="/posts/approval/{{ appuser.to_post_id }}" accept-charset="UTF-8" method="post" class="chatForm_addbtn">
@@ -37,7 +37,7 @@
                 </form>
 
             {% endfor %}
-        {% endfor %} -->
+        {% endfor %}
 
         <div class='userAction'>
             <div class="userAction_edit userAction_common">
