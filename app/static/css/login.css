@@ -1,11 +1,11 @@
 .signinPage {
   margin-top: 10vh;
+  text-align: center;
 }
 
 .title {
   color:#4866c9;
   margin: 20px 0;
-  text-align: center;
 }
 
 .userIcon {
@@ -40,4 +40,22 @@
 
 .linkToLogin a {
   color: #4866c9;
+}
+
+.test_account {
+  background-color: #4866c9;
+  color: #eee;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 21px;
+}
+
+.test_idpw {
+  background-color: #4866c9;
+  color: #eee;
+  display: block;
+  width: 400px;
+  margin: 10px auto;
+  border-radius: 21px;
 }

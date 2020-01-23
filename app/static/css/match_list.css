@@ -198,3 +198,11 @@
   position: absolute;
   right: 0;
 }
+
+.blue_text {
+  color: blue;
+}
+
+.red_text {
+  color: red;
+}

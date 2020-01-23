@@ -21,21 +21,21 @@
             </div>
         </div>
         {% if iscurrent %}
-        <!-- 編集します -->
-        <!-- {% for post in mypost %}
-        <a href="{% url 'match:chat_show' 4 %}">{{ post.id }}</a>
-        {% endfor %} -->
 
         <!-- {% for appuser in approval_user %}
             {% for app in appuser %}
-                <p>{{app.to_post.title}}</p>
-                <form action="/posts/approval/{{ appuser.to_post_id }}" accept-charset="UTF-8" method="post" class="chatForm_addbtn">
+                <p>{{app.to_post.id}}</p>
+
+                {% if app.approval == 1 %}
+                <form action="/posts/approval/{{ app.to_post_id }}" accept-charset="UTF-8" method="post" class="chatForm_addbtn">
                     <div class="matchingPerson_add">
                         <button class="matchlist_button">承認する</button>
                     </div>
                     {% csrf_token %}
                 </form>
-
+                {% elif app.approval == 2 %}
+                    <a href="{% url 'match:chat_show' 4 %}"></a>
+                {% endif %}
             {% endfor %}
         {% endfor %} -->
 
