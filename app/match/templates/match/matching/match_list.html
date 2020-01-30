@@ -40,9 +40,9 @@
                 </div>
                 <div class="matchingPerson_men">
                     {% if matching.from_user.sex == "man" %}
-                    <h6><b class="blue_text">{{ matching.to_post.men_number | add:matching.to_post.men_restriction | add:-1 }}人</b>／{{ matching.to_post.men_number }}人｜<b class="red_text">{{ matching.to_post.women_number|add:matching.to_post.women_restriction }}人</b>／{{ matching.to_post.women_number }}人</h6>
+                    <h6><b class="blue_text">{{ matching.to_post.men_number | add:matching.to_post.men_restriction | add:-1 }}人</b>／{{ matching.to_post.men_number }}人｜{{ matching.to_post.women_number|add:matching.to_post.women_restriction }}人／{{ matching.to_post.women_number }}人</h6>
                     {% else %}
-                    <h6><b class="blue_text">{{ matching.to_post.men_number | add:matching.to_post.men_restriction }}人</b>／{{ matching.to_post.men_number }}人｜<b class="red_text">{{ matching.to_post.women_number|add:matching.to_post.women_restriction | add:-1 }}人</b>／{{ matching.to_post.women_number }}人</h6>
+                    <h6>{{ matching.to_post.men_number | add:matching.to_post.men_restriction }}人／{{ matching.to_post.men_number }}人｜<b class="red_text">{{ matching.to_post.women_number|add:matching.to_post.women_restriction | add:-1 }}人</b>／{{ matching.to_post.women_number }}人</h6>
                     {% endif %}
                 </div>
                 {% if matching.approval == 0 %}
