@@ -26,11 +26,7 @@
             <div class="like"></div>
             <div class="dislike"></div>
             <h3 class="recruitment_number">募集人数</h3>
-            {% if post.userinfo.sex == "man" %}
-                <p><b class="men_number">男性 {{ post.men_number| add:-1 }}人</b>／{{ post.men_number }}人　女性 {{ post.women_number }}人／{{ post.women_number }}人</p>
-            {% else %}
-                <p>男性 {{ post.men_number }}人／{{ post.men_number }}人　<b class="women_number">女性 {{ post.women_number| add:-1 }}人</b>／{{ post.women_number }}人</p>
-            {% endif %}
+                <p><b class="men_number">男性</b> {{ post.men_number| add:-1 }}人／{{ post.men_number }}人　<b class="women_number">女性</b> {{ post.women_number }}人／{{ post.women_number }}人</p>
             </li>
             {% endfor %}
         </ul>
