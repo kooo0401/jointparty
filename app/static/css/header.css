@@ -1,5 +1,6 @@
 .navbar {
-  background-color: #4866c9;
+  background-color: #4169e1;
+  height: 50px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -35,3 +36,18 @@
   padding: .5rem;
 }
 
+.toppage {
+  font-family: 'Amatic SC', cursive;
+  cursor: default;
+  font-size: 34px;
+}
+
+.toppage-link {
+  color: #eee;
+}
+
+.toppage-link:hover {
+  text-decoration: none;
+  color: aliceblue;
+  opacity:0.6;
+}
