@@ -10,52 +10,52 @@
 
 <div class="py-4">
     <div class="container">
-      <div id="main_visual" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#main_visual" data-slide-to="0" class="active"></li>
-          <li data-target="#main_visual" data-slide-to="1"></li>
-          <li data-target="#main_visual" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <!-- スライド01 -->
-          <div class="carousel-item active">
-            <img class="img-fluid" src={% static "images/slide1.jpg" %} alt="スタジアムの観客">
-            <div class="carousel-caption d-none d-md-block">
-              <h2>合コンマッチングサービス</h2>
-              <p>既婚者、または20歳未満の方はご利用になれません。</p>
+        <div id="main_visual" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#main_visual" data-slide-to="0" class="active"></li>
+                <li data-target="#main_visual" data-slide-to="1"></li>
+                <li data-target="#main_visual" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!-- スライド01 -->
+                <div class="carousel-item active">
+                    <img class="img-fluid" src={% static "images/slide1.jpg" %} alt="スタジアムの観客">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>合コンマッチングサービス</h2>
+                        <p>既婚者、または20歳未満の方はご利用になれません。</p>
+                    </div>
+                </div>
+                <!-- / スライド01 -->
+                <!-- スライド02 -->
+                <div class="carousel-item">
+                    <img class="img-fluid" src={% static "images/slide2.jpg" %} alt="PKシュート">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>素敵な出会いを求めに</h2>
+                        <p>まだ見ぬ運命の人を探しましょう</p>
+                    </div>
+                </div>
+                <!-- / スライド02 -->
+                <!-- スライド03 -->
+                <div class="carousel-item">
+                    <img class="img-fluid" src={% static "images/slide3.jpg" %} alt="芝生">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                </div>
+                <!-- / スライド03 -->
             </div>
-          </div>
-          <!-- / スライド01 -->
-          <!-- スライド02 -->
-          <div class="carousel-item">
-            <img class="img-fluid" src={% static "images/slide2.jpg" %} alt="PKシュート">
-            <div class="carousel-caption d-none d-md-block">
-              <h2>素敵な出会いを求めに</h2>
-              <p>まだ見ぬ運命の人を探しましょう</p>
-            </div>
-          </div>
-          <!-- / スライド02 -->
-          <!-- スライド03 -->
-          <div class="carousel-item">
-            <img class="img-fluid" src={% static "images/slide3.jpg" %} alt="芝生">
-            <div class="carousel-caption d-none d-md-block">
-              <h2></h2>
-              <p></p>
-            </div>
-          </div>
-          <!-- / スライド03 -->
+            <a class="carousel-control-prev" href="#main_visual" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">前に戻る</span>
+            </a>
+            <a class="carousel-control-next" href="#main_visual" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">次に進む</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#main_visual" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">前に戻る</span>
-        </a>
-        <a class="carousel-control-next" href="#main_visual" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">次に進む</span>
-        </a>
-      </div>
     </div>
-  </div>
+</div>
 
 
 <div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a>
@@ -72,4 +72,5 @@
         {% endfor %}
     </ul>
 </div>
+
 {% endblock %}
