@@ -57,20 +57,33 @@
     </div>
 </div>
 
+<div class="linkToCreate"><a href="{% url 'match:create' %}" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a></div>
+<h3 class="text-message">合コン希望の新着メンバー</h3>
 
-<div class="linkToCreate"><a href="/users/{{user.id}}/create" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a>
-    <ul>
-        {% for user in form.exclude_userlist %}
-            <li class="user_profile_list">
-            {% if DEBUG %}
-                <img src="/media/{{ user.image.origin }}" class="list_image">
-                {% else %}
-                <img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}" class="list_image">
+<ul class="horizontal-list">
+    {% for user in form.exclude_userlist %}
+    <li class="item user_profile_list">
+        <div class="user_profile_top">
+            {{ user.name }}
+        </div>
+        {% if DEBUG %}
+        <a href="/users/profile/{{ user.id }}"><img src="/media/{{ user.image.origin }}" class="list_image"></a>
+        {% else %}
+        <a href="/users/profile/{{ user.id }}"><img src="https://storage.cloud.google.com/jointparty/{{ user.image.origin }}" class="list_image"></a>
+        {% endif %}
+        <p class="list_name">
+            {% if user.sex == "man" %}
+            男性
+            {% else %}
+            女性
             {% endif %}
-                <a href="/users/profile/{{ user.id }}" class="list_name">{{ user.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="linkToCreate"><a href="{% url 'match:posts_list' %}" class="btn-square">投稿一覧 <i class="fas fa-book-open"></i></a></div>
+
+{% include 'match/footer.html' %}
 
 {% endblock %}

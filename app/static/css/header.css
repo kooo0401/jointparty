@@ -36,18 +36,18 @@
   padding: .5rem;
 }
 
-.toppage {
+.nav-toppage {
   font-family: 'Amatic SC', cursive;
   cursor: default;
   font-size: 34px;
   margin: 0 20px 0 0;
 }
 
-.toppage-link {
+.nav-toppage-link {
   color: #eee;
 }
 
-.toppage-link:hover {
+.nav-toppage-link:hover {
   text-decoration: none;
   color: aliceblue;
   opacity:0.6;

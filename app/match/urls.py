@@ -18,7 +18,7 @@ urlpatterns = [
     path('users/signup/', user.signup, name='signup'),
     path('users/profile/<int:pk>', user.profile, name="profile"),
     path('users/<int:pk>/edit/', user.UserUpdateView.as_view(template_name='match/edit.html'), name="update"),
-    path('users/<int:userinfo_id>/create/', post.PostsCreateView.as_view(template_name='match/posts/create.html'), name='create'),
+    path('users/create/', post.PostsCreateView.as_view(template_name='match/posts/create.html'), name='create'),
     path('posts_list/', post.PostListView.as_view(template_name='match/posts/posts_list.html'), name='posts_list'),
     path('reactions/', reaction_controller.create, name='reactions'),
     # path('users/<int:user_id>/matching/', reaction.MatchListView.as_view(template_name='match/matching/match_list.html'), name='matching'),

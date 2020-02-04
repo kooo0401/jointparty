@@ -37,7 +37,6 @@
 .user_profile_list {
   list-style: none;
   width: 260px;
-  float: left;
   text-align: center;
 }
 
@@ -46,17 +45,48 @@
   height: 170px;
   border-radius: 50%;
   overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list_image:hover {
+  text-decoration: none;
+  color: #eee;
+  opacity: 0.6;
 }
 
 .list_name {
   display: block;
-  color: #eee;
-  font-size: large;
-  margin-bottom: 10px;
+  font-size: 22px;
+  color: black;
 }
 
-.list_name:hover {
-  text-decoration: none;
-  color: #eee;
-  opacity: 0.6;
+.horizontal-list {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-inline-start: 0px !important;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item {
+  height: 270px;
+  margin: 16px;
+  font-size: 48px;
+  background: #eee;
+  /* 横スクロール用 */
+  display: inline-block;
+  width: 20%;
+}
+
+.text-message {
+  text-align: center;
+}
+
+.user_profile_top {
+  height: 40px;
+  background-color: #ff9f51;
+  font-size: 25px;
+  color: #fff;
 }

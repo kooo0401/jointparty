@@ -1,0 +1,17 @@
+.main-footer {
+  height:100px;
+  width: 100%;
+  background-color: #eee;
+}
+
+.nav-toppage {
+  font-family: 'Amatic SC';
+  font-size: 34px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.nav-text {
+  color: black;
+  margin: 0 !important;
+}
