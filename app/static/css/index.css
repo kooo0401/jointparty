@@ -14,10 +14,8 @@
 }
 
 .loginPage_contents_title {
-  margin-top: 12vh;
   /* オシャレ文字を使用 */
   font-family: 'Amatic SC', cursive;
-  font-size: 150px;
   cursor: default;
 }
 
@@ -25,11 +23,48 @@
   display: block;
   max-width: 400px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 500px auto 0;
   border-radius: 30px;
   background: #4866c9;
   color: #fff;
   /* オシャレ文字を使用 */
   font-family: 'Amatic SC', cursive;
   cursor: pointer;
+}
+
+.neon{
+  position: absolute;
+  width: 700px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  font-size: 8em;
+  color: #eee;
+  text-shadow: 0 0 50px blue;
+  letter-spacing: 5px;
+}
+
+.neon:after{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  color: blue;
+  filter: blur(15px);
+}
+
+.neon:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: blue;
+  z-index: -2;
+  opacity: .3;
+  filter: blur(50px);
 }

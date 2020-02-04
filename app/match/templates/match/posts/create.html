@@ -19,7 +19,7 @@
 <div class="createpage">
     <div class='head_title'>募集フォームを作成</div>
     <div class="createcontainer">
-        <form class="mt-5 createform" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' user.id %}" autocomplete="off">
+        <form class="mt-5 createform" id="post_create" accept-charset="UTF-8" method="POST" action="{% url 'match:create' %}" autocomplete="off">
         {% csrf_token %}
 
             <div class="form-group">

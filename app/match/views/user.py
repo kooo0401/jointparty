@@ -18,7 +18,6 @@ from django import forms
 from django.db.models import Prefetch
 
 
-
 def signup(request):
     if request.method == 'GET':
         form = SignupForm()

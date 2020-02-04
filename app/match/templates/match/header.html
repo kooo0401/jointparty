@@ -1,21 +1,26 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+<!-- /オシャレ文字を使用 -->
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
 
 {% if user.is_authenticated %}
 <nav class="navbar navbar-expand-lg navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="nav-toppage">
+            <a class="nav-toppage-link" href="/">JointParty</a>
+        </div>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   メニュー
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'match:create' request.user.id %}">募集フォーム（作成）</a>
                     <a class="dropdown-item" href="{% url 'match:users' %}">登録ユーザー（一覧）</a>
+                    <a class="dropdown-item" href="{% url 'match:create' %}">募集フォーム（作成）</a>
                     <a class="dropdown-item" href="{% url 'match:posts_list' %}">投稿（一覧）</a>
                     <a class="dropdown-item" href="{% url 'match:matching' request.user.id %}">お気に入りリスト</a>
                 </div>
@@ -26,6 +31,34 @@
         </div>
         <div class="dropdown">
             <a class="logout_button" href="{% url 'match:logout' %}">ログアウト <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+</nav>
+{% else %}
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="nav-toppage">
+            <a class="nav-toppage-link" href="/">JointParty</a>
+        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  メニュー
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'match:users' %}">登録ユーザー（一覧）</a>
+                </div>
+            </li>
+        </ul>
+        <div class="dropdown">
+            <a class="mypage_button" href="{% url 'match:signup' %}">新規作成 <i class="fas fa-user"></i></a>
+        </div>
+        <div class="dropdown">
+            <a class="logout_button" href="{% url 'match:login' %}">ログイン <i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 </nav>

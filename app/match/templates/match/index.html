@@ -10,13 +10,13 @@
 
 <div class="loginPage">
     <div class="container">
-        <form method="GET" action="/login/">
+        <form method="GET" action="/users/">
             <div class="loginPage_contents">
-                <h1 class="loginPage_contents_title">J o i n t P a r t y</h1>
+                <h1 class="loginPage_contents_title neon" data-text="jointparty">J o i n t P a r t y</h1>
                 {% csrf_token %}
                 {% buttons %}
                 <button type="submit" class="loginPage_contents_btn">
-                    ログイン
+                    はじめる
                 </button>
                 {% endbuttons %}
             </div>

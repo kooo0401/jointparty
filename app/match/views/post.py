@@ -10,8 +10,11 @@ from match.models.reaction import Reaction
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
-
+# クラスベースビューの場合、login_requiredをmethod_decoratorを使用する
+@method_decorator(login_required, name='dispatch')
 class PostsCreateView(CreateView, LoginRequiredMixin):
     model = Posts
     form_class = PostsCreateForm

@@ -140,6 +140,26 @@ body {
   background: url("../images/nope.png") no-repeat scroll 0 0;
 }
 
+.testimage {
+  background: url("../images/liked_image2.png") no-repeat scroll 0 0;
+  opacity: 0;
+  height: 80px;
+  position: absolute;
+  width: 170px;
+  left: 0px;
+  top:40px;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+  -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+  -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+  -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+  transform: translate3d(0%,0,0) scale3d(1,1,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
 /* Image container */
 #tinderslide .img {
   height: 90%;
