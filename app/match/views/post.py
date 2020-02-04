@@ -13,6 +13,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+
 # クラスベースビューの場合、login_requiredをmethod_decoratorを使用する
 @method_decorator(login_required, name='dispatch')
 class PostsCreateView(CreateView, LoginRequiredMixin):
@@ -30,6 +31,8 @@ class PostsCreateView(CreateView, LoginRequiredMixin):
         context = super().get_context_data(**kwargs)
         return context
 
+
+@method_decorator(login_required, name='dispatch')
 class PostListView(ListView, LoginRequiredMixin):
     model = Posts
     # ログインユーザー以外の投稿数を数値で取得(LisViewでデフォルトで返されるcontextの"object_list"を上書き)
