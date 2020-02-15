@@ -12,5 +12,5 @@ class UserListForm(forms.Form):
     def load(self, user_id):
         self.currentuser_id = user_id
         # ログインユーザー以外のレコードを代入
-        self.exclude_userlist = UserInfo.objects.exclude(pk=self.currentuser_id)
+        self.exclude_userlist = UserInfo.objects.exclude(pk=self.currentuser_id).order_by('-id')[:10]
         self.list_length = len(self.exclude_userlist)

@@ -19,27 +19,27 @@
             <div class="carousel-inner">
                 <!-- スライド01 -->
                 <div class="carousel-item active">
-                    <img class="img-fluid" src={% static "images/slide1.jpg" %} alt="スタジアムの観客">
+                    <img class="img-fluid" src={% static "images/slide1.jpg" %}>
                     <div class="carousel-caption d-none d-md-block">
-                        <h2>合コンマッチングサービス</h2>
+                        <h2 class="main_image_text">合コンマッチングサービス</h2>
                         <p>既婚者、または20歳未満の方はご利用になれません。</p>
                     </div>
                 </div>
                 <!-- / スライド01 -->
                 <!-- スライド02 -->
                 <div class="carousel-item">
-                    <img class="img-fluid" src={% static "images/slide2.jpg" %} alt="PKシュート">
+                    <img class="img-fluid" src={% static "images/slide2.jpg" %}>
                     <div class="carousel-caption d-none d-md-block">
-                        <h2>素敵な出会いを求めに</h2>
+                        <h2 class="main_image_text">素敵な出会いを求めに</h2>
                         <p>まだ見ぬ運命の人を探しましょう</p>
                     </div>
                 </div>
                 <!-- / スライド02 -->
                 <!-- スライド03 -->
                 <div class="carousel-item">
-                    <img class="img-fluid" src={% static "images/slide3.jpg" %} alt="芝生">
+                    <img class="img-fluid" src={% static "images/slide3.jpg" %}>
                     <div class="carousel-caption d-none d-md-block">
-                        <h2></h2>
+                        <h2 class="main_image_text"> </h2>
                         <p></p>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
 </div>
 
 <div class="linkToCreate"><a href="{% url 'match:create' %}" class="btn-square">募集フォーム作成 <i class="fas fa-pencil-alt"></i></a></div>
-<h3 class="text-message">合コン希望の新着メンバー</h3>
+<h2 class="text-message">新着メンバー</h3>
 
 <ul class="horizontal-list">
     {% for user in form.exclude_userlist %}

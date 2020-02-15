@@ -53,7 +53,7 @@
                     {% csrf_token %}
                 </form>
                 {% else %}
-                <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+                <form action="/chat/create/{{ matching.to_post.id }}" accept-charset="UTF-8" class="chatForm_open" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
                     {% csrf_token %}
                     <input type="submit" name="commit" value="チャットを開く" class="chatForm_btn" data-disable-with="チャットを開く" />
                 </form>
